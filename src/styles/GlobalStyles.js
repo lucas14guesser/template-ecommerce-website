@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     :root {
@@ -31,5 +32,56 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-title);
         font-size: var(--font-title-sz);
+    }
+
+    button {
+        font-family: var(--font-txt);
+        font-size: var(--font-txt-sz);
+    }
+`
+export const LinksCategorias = styled(Link)`
+    text-decoration: none;
+    color: var(--color-txt);
+    font-size: var(--font-destq-sz);
+    transition: var(--trans-time);
+
+    &:hover {
+        color: var(--color-hover);
+    }
+`
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 4rem 10rem;
+`
+export const Title = styled.h1`
+    text-align: center;
+`
+export const ContainerImgsCarousel = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--color-bg-section);
+    border: 1px solid var(--color-txt);
+`
+export const ImgsCarousel = styled.img`
+    width: 15rem;
+    height: 15rem;
+`
+export const BtnAddCarrinho = styled.button`
+    width: 13rem;
+    padding: 1rem;
+    border: 1px solid var(--color-txt);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--color-txt);
+    background-color: var(--color-bg);
+    transition: var(--trans-time);
+
+    &:hover {
+        background-color: var(--color-hover);
     }
 `

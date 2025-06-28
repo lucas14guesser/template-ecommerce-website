@@ -24,6 +24,7 @@ This repository contains a **template for an e-commerce website** built with **R
 - [Styled-components](https://styled-components.com/)  
 - [React Icons](https://react-icons.github.io/react-icons/)  
 - [Axios](https://axios-http.com/)
+- [React Slick](https://react-slick.neostack.com/)
 
 ---
 
@@ -53,13 +54,11 @@ This repository contains a **template for an e-commerce website** built with **R
     ├── node_modules
     ├── public
     ├── src
+    │   ├── api
     │   ├── components
-    │   │   ├── layout
-    │   │   └── modals
     │   ├── pages
     │   ├── router
     │   ├── services
-    │   │   └── navbar
     │   ├── styles
     │   └── main.jsx
     ├── .gitignore

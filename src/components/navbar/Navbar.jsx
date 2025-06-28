@@ -1,10 +1,10 @@
 import React from 'react'
-import LinksProdutosNav from './LinksProdutosNav'
+import { Nav, NavbarContainer } from './NavbarStyles'
 import SocialNav from './SocialNav'
 import LinkHomeNav from './LinkHomeNav'
-import SearchNav from './SearchNav'
-import { Nav, NavbarContainer } from '../../../styles/navbar/NavbarStyles'
 import LinksUserNav from './LinksUserNav'
+import SearchNav from './SearchNav'
+import LinksProdutosNav from './LinksProdutosNav'
 import ContactUsNav from './ContactUsNav'
 
 export default function Navbar() {

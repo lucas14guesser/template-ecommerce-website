@@ -1,6 +1,7 @@
 import React from 'react'
-import { LinkSocialMedia, ListNav } from '../../../styles/navbar/NavbarStyles'
-import { UserLinks } from '../../../services/navbar/NavbarServices'
+import { LinkSocialMedia, ListNav } from './NavbarStyles'
+import { UserLinks } from './NavbarServices'
+
 
 export default function LinksUserNav() {
   return (

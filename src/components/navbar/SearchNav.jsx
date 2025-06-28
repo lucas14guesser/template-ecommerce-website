@@ -1,6 +1,6 @@
 import React from 'react'
-import { BtnSearch, SearchIpt } from '../../../styles/navbar/NavbarStyles'
 import { FaSearch } from "react-icons/fa";
+import { BtnSearch, SearchIpt } from './NavbarStyles';
 
 export default function SearchNav() {
   return (

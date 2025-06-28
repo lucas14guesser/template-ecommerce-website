@@ -1,6 +1,7 @@
 import React from 'react'
-import { LinkHome } from '../../../services/navbar/NavbarServices'
-import { LinkHomeTxt } from '../../../styles/navbar/NavbarStyles'
+import { LinkHomeTxt } from './NavbarStyles'
+import { LinkHome } from './NavbarServices'
+
 
 export default function LinkHomeNav() {
     return (

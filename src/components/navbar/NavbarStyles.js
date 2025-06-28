@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
-    padding: 2rem 4rem;
+    padding: 2rem 5rem;
     background-color: var(--color-bg-section);
     gap: 2rem;
     box-shadow: 3px 3px 3px var(--color-somb);
@@ -58,7 +58,7 @@ export const SearchIpt = styled.input`
 `
 export const BtnSearch = styled.button`
     width: 3rem;
-    padding: 1.05rem;
+    padding: .9rem;
     color: var(--color-bg);
     background-color: var(--color-txt);
     border: 1px solid var(--color-txt);
@@ -70,16 +70,6 @@ export const BtnSearch = styled.button`
 
     &:hover {
         background-color: var(--color-hover);
-    }
-`
-export const LinksCategoriasNav = styled(Link)`
-    text-decoration: none;
-    color: var(--color-txt);
-    font-size: var(--font-destq-sz);
-    transition: var(--trans-time);
-
-    &:hover {
-        color: var(--color-hover);
     }
 `
 export const ContactContainer = styled.div`
