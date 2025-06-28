@@ -87,6 +87,26 @@ export const categoriasProdutos = [
                 foto: "/assets/roupas/blusa-teste-5.png",
                 nome: "Blusa Teste 5"
             },
+            {
+                foto: "/assets/roupas/blusa-teste-6.png",
+                nome: "Blusa Teste 6"
+            },
+            {
+                foto: "/assets/roupas/blusa-teste-7.png",
+                nome: "Blusa Teste 7"
+            },
+            {
+                foto: "/assets/roupas/blusa-teste-8.png",
+                nome: "Blusa Teste 8"
+            },
+            {
+                foto: "/assets/roupas/blusa-teste-9.png",
+                nome: "Blusa Teste 9"
+            },
+            {
+                foto: "/assets/roupas/blusa-teste-10.png",
+                nome: "Blusa Teste 10"
+            },
         ]
     },
 ]
