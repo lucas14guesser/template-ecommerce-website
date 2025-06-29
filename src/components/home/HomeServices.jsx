@@ -11,3 +11,16 @@ export const settingsCarousel = {
     autoplay: true,
     autoplaySpeed: 3000,
 }
+export function urlFormat(nome) {
+    return nome
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/ç/g, 'c')
+        .replace(/\s+/g, '-')
+        .replace(/[^a-zA-Z0-9\-]/g, '')
+        .toLowerCase();
+}
+export function precoFormat(preco) {
+    return preco
+    .toFixed(2)
+}

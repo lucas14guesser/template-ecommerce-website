@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-title);
         font-size: var(--font-title-sz);
+        text-transform: uppercase;
     }
 
     button {
@@ -84,4 +85,9 @@ export const BtnAddCarrinho = styled.button`
     &:hover {
         background-color: var(--color-hover);
     }
+`
+export const FontPreco = styled.p`
+    font-size: var(--font-destq-sz);
+    font-weight: 600;
+    font-family: var(--font-title);
 `
