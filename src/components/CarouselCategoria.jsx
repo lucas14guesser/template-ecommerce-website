@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { ContainerImgsCarousel, ImgsCarousel, BtnAddCarrinho, Title, FontPreco } from '../styles/GlobalStyles';
+import { ContainerImgsCarousel, ImgsCarousel, BtnAddCarrinho, Title, FontPreco, NewPrice } from '../styles/GlobalStyles';
 import { precoFormat, settingsCarousel, urlFormat } from './home/HomeServices';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,17 @@ export default function CarouselCategoria({ categoria, produtos }) {
                                 <ImgsCarousel src={produto.fotos[0].foto} alt={produto.nome} />
                             </Link>
                             <p>{produto.nome}</p>
-                            <FontPreco>R${precoFormat(produto.preco)}</FontPreco>
+                            {produto.ofertas && produto.ofertas[0]?.oferta ? (
+                                <NewPrice>
+                                    <FontPreco style={{ textDecoration: 'line-through', color: 'gray' }}>
+                                        R${precoFormat(produto.preco)}
+                                    </FontPreco>
+                                    <FontPreco>R${precoFormat(produto.ofertas[0].novoPreco)}</FontPreco>
+                                </NewPrice>
+                            ) : (
+                                <FontPreco>R${precoFormat(produto.preco)}</FontPreco>
+                            )}
+
                             <BtnAddCarrinho>Adicionar ao carrinho</BtnAddCarrinho>
                         </ContainerImgsCarousel>
                     </div>

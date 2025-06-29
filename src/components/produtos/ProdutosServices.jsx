@@ -174,6 +174,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/vestido-teste-6.png" }
                 ],
                 preco: 89.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 39.90 }
+                ]
             },
             {
                 id: 32,
@@ -852,3 +855,4 @@ export const categoriasProdutos = [
 ]
 export const todosProdutos = categoriasProdutos.flatMap(cat => cat.produtos);
 export const lancamentos = todosProdutos.filter(p => p.lancamento);
+export const ofertas = todosProdutos.filter(p => p.ofertas?.[0]?.oferta);

@@ -1,5 +1,9 @@
 export const LinksCategoria = [
     {
+        nome: "Ofertas",
+        link: "/ofertas"
+    },
+    {
         nome: "Lançamentos",
         link: "/lancamentos"
     },

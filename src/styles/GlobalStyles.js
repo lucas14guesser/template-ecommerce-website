@@ -91,3 +91,9 @@ export const FontPreco = styled.p`
     font-weight: 600;
     font-family: var(--font-title);
 `
+export const NewPrice = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+`
