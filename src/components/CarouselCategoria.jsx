@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function CarouselCategoria({ categoria, produtos }) {
     return (
-        <>
+        <div>
             <Title>{categoria}</Title>
             <Slider {...settingsCarousel}>
                 {produtos.map((produto, index) => (
@@ -21,6 +21,6 @@ export default function CarouselCategoria({ categoria, produtos }) {
                     </div>
                 ))}
             </Slider>
-        </>
+        </div>
     );
 }

@@ -52,7 +52,7 @@ export const LinksCategorias = styled(Link)`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
     margin: 4rem 10rem;
 `
 export const Title = styled.h1`
