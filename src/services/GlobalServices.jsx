@@ -1,42 +1,42 @@
 export const LinksCategoria = [
     {
         nome: "Ofertas",
-        link: "/ofertas"
+        link: "/produtos/ofertas"
     },
     {
         nome: "Lançamentos",
-        link: "/lancamentos"
+        link: "/produtos/lancamentos"
     },
     {
         nome: "Blusas",
-        link: "/blusas"
+        link: "/produtos/blusas"
     },
     {
         nome: "Vestidos",
-        link: "/vestidos"
+        link: "/produtos/vestidos"
     },
     {
         nome: "Jaquetas",
-        link: "/jaquetas"
+        link: "/produtos/jaquetas"
     },
     {
         nome: "Calças",
-        link: "/calcas"
+        link: "/produtos/calcas"
     },
     {
         nome: "Shorts",
-        link: "/shorts"
+        link: "/produtos/shorts"
     },
     {
         nome: "Saias",
-        link: "/saias"
+        link: "/produtos/saias"
     },
     {
         nome: "Sapatos",
-        link: "/sapatos"
+        link: "/produtos/sapatos"
     },
     {
         nome: "Acessórios",
-        link: "/acessorios"
+        link: "/produtos/acessorios"
     },
 ]

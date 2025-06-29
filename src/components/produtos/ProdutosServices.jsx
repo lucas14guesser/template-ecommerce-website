@@ -1,3 +1,5 @@
+import { urlFormat } from '../home/HomeServices';
+
 export const categoriasProdutos = [
     {
         categoria: "Blusas",
@@ -612,6 +614,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/saia-teste-5.png" }
                 ],
                 preco: 69.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 19.90 }
+                ]
             },
             {
                 id: 71,
@@ -682,6 +687,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/sapato-teste-2.png" }
                 ],
                 preco: 129.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 99.90 }
+                ],
                 cores: [
                     {
                         cor: "rosa",
@@ -801,6 +809,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/brincos-teste-4.png" }
                 ],
                 preco: 209.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 159.90 }
+                ]
             },
             {
                 id: 90,
@@ -856,3 +867,30 @@ export const categoriasProdutos = [
 export const todosProdutos = categoriasProdutos.flatMap(cat => cat.produtos);
 export const lancamentos = todosProdutos.filter(p => p.lancamento);
 export const ofertas = todosProdutos.filter(p => p.ofertas?.[0]?.oferta);
+
+export function obterCategoriaSelecionada(categoriaURL) {
+  if (categoriaURL === 'lancamentos') {
+    return {
+      categoria: 'Lançamentos',
+      produtos: lancamentos,
+    };
+  }
+
+  if (categoriaURL === 'ofertas') {
+    return {
+      categoria: 'Ofertas',
+      produtos: ofertas,
+    };
+  }
+
+  const encontrada = categoriasProdutos.find((cat) => urlFormat(cat.categoria) === categoriaURL);
+
+  if (encontrada) {
+    return {
+      categoria: encontrada.categoria,
+      produtos: encontrada.produtos,
+    };
+  }
+
+  return null;
+}
