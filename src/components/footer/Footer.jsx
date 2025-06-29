@@ -1,16 +1,23 @@
 import React from 'react'
-import { FooterC } from './FooterStyles'
+import { FooterC, FooterCopy, FooterG } from './FooterStyles'
 import MapaFooter from './MapaFooter'
 import PrivacidadeFooter from './PrivacidadeFooter'
 import LocalizacaoFooter from './LocalizacaoFooter'
+import CopyrightFooter from './CopyrightFooter'
 
 
 export default function Footer() {
     return (
-        <FooterC>
-            <MapaFooter />
-            <PrivacidadeFooter />
-            <LocalizacaoFooter />
-        </FooterC>
+        <FooterG>
+            <FooterC>
+                <MapaFooter />
+                <PrivacidadeFooter />
+                <LocalizacaoFooter />
+            </FooterC>
+            <FooterCopy>
+                <CopyrightFooter />
+            </FooterCopy>
+        </FooterG>
+
     )
 }

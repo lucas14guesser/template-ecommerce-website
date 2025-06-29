@@ -14,6 +14,8 @@ export default function Home() {
           produtos={categoria.produtos}
         />
       ))}
+
+      <div></div>
     </Container>
   );
 }

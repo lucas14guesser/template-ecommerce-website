@@ -12,3 +12,7 @@ export const PrivacidadeSeg = [
         link: "/perguntas-frequentes"
     },
 ]
+export const getYear = () => {
+    const year = new Date().getFullYear();
+    return year;
+}
