@@ -14,7 +14,6 @@ export const GlobalStyles = createGlobalStyle`
 
     --trans-time: .5s;
 
-    /* Font sizes padrão (desktop) */
     --font-txt-sz: 1rem;
     --font-destq-sz: 1.3rem;
     --font-icon-sz: 1.5rem;
@@ -146,7 +145,7 @@ export const ImgsCarousel = styled.img`
     height: 7rem;
   }
 `
-export const BtnAddCarrinho = styled.button`
+export const BtnDefault = styled.button`
   width: 13rem;
   padding: 1rem;
   border: 1px solid var(--color-txt);
@@ -193,4 +192,84 @@ export const NewPrice = styled.div`
   @media (max-width: 480px) {
     gap: 0.5rem;
   }
+`
+export const Formulario = styled.form`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-txt);
+  padding: 2rem;
+  align-items: center;
+  background-color: var(--color-bg-section);
+  gap: 1rem;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
+`
+export const FormInput = styled.input`
+  width: 40rem;
+  padding: 1rem;
+  border: 1px solid var(--color-txt);
+  font-family: var(--font-txt);
+  color: var(--color-txt);
+  border-radius: 8px;
+  font-size: var(--font-txt-sz);
+  outline: none;
+
+  @media (max-width: 1024px) {
+    width: 30rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 25rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 20rem;
+  }
+`
+export const LinkDefault = styled(Link)`
+  text-decoration: underline;
+  color: var(--color-txt);
+  font-size: var(--font-txt-sz);
+  transition: var(--trans-time);
+
+  &:hover {
+    color: var(--color-hover);
+  }
+`
+export const Subcontainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5.5rem;
+  background-color: var(--color-bg-section);
+  padding: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    gap: 4rem;
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+`
+export const IconesP = styled.p`
+  font-size: var(--font-destq-sz);
 `

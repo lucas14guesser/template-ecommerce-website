@@ -11,6 +11,10 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         home: resolve(__dirname, './src/pages/Home.jsx'),
         produtos: resolve(__dirname, './src/pages/Produtos.jsx'),
+        login: resolve(__dirname, './src/pages/Login.jsx'),
+        cadastro: resolve(__dirname, './src/pages/Cadastro.jsx'),
+        minhaConta: resolve(__dirname, './src/pages/MinhaConta.jsx'),
+
       }
     }
   }

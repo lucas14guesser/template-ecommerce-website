@@ -1,5 +1,5 @@
 import React from 'react'
-import { BtnAddCarrinho, ContainerImgsCarousel, FontPreco, ImgsCarousel, NewPrice, Title } from '../../styles/GlobalStyles'
+import { BtnDefault, ContainerImgsCarousel, FontPreco, ImgsCarousel, NewPrice, Title } from '../../styles/GlobalStyles'
 import { ProdutosC } from './ProdutosStyles'
 import { Link } from 'react-router-dom'
 import { precoFormat, urlFormat } from '../home/HomeServices'
@@ -27,7 +27,7 @@ export default function ListaProdutos({ categoria, produtos }) {
                                 <FontPreco>R${precoFormat(produto.preco)}</FontPreco>
                             )}
 
-                            <BtnAddCarrinho>Adicionar ao carrinho</BtnAddCarrinho>
+                            <BtnDefault>Adicionar ao carrinho</BtnDefault>
                         </ContainerImgsCarousel>
                     </div>
                 ))}
