@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         home: resolve(__dirname, './src/pages/Home.jsx'),
+        produtos: resolve(__dirname, './src/pages/Produtos.jsx'),
       }
     }
   }

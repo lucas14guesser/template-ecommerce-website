@@ -8,7 +8,6 @@ import { urlFormat } from '../components/home/HomeServices';
 export default function Produtos() {
   const { categoria } = useParams();
   const categoriaURL = urlFormat(categoria);
-
   const categoriaSelecionada = obterCategoriaSelecionada(categoriaURL);
 
   return (
