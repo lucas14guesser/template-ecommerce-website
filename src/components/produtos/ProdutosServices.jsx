@@ -1,4 +1,13 @@
+import { useLocation } from 'react-router-dom';
 import { urlFormat } from '../home/HomeServices';
+
+{/*
+    Lista de cores:
+        cor: "#27AE60" = Verde
+        cor: "#000000" = Preto
+        cor: "#FF78FF" = Rosa
+        cor: "#FFFF00" = Amarelo 
+*/}
 
 export const categoriasProdutos = [
     {
@@ -118,7 +127,7 @@ export const categoriasProdutos = [
                 preco: 109.90,
                 cores: [
                     {
-                        cor: "verde",
+                        cor: "#27AE60",
                         tamanhos: [
                             { tamanho: "P", quantidade: 2 },
                             { tamanho: "M", quantidade: 5 },
@@ -136,7 +145,7 @@ export const categoriasProdutos = [
                 preco: 89.90,
                 cores: [
                     {
-                        cor: "rosa",
+                        cor: "#FF78FF",
                         tamanhos: [
                             { tamanho: "P", quantidade: 6 },
                             { tamanho: "M", quantidade: 1 },
@@ -349,7 +358,7 @@ export const categoriasProdutos = [
                 preco: 29.90,
                 cores: [
                     {
-                        cor: "verde",
+                        cor: "#27AE60",
                         tamanhos: [
                             { tamanho: "38", quantidade: 1 },
                             { tamanho: "40", quantidade: 3 },
@@ -431,30 +440,35 @@ export const categoriasProdutos = [
                 id: 12,
                 nome: "Shorts Teste 1",
                 fotos: [
-                    { foto: "/assets/roupas/shorts-teste-1.png" }
+                    { foto: "/assets/roupas/shorts-teste-1.png" },
+                    { foto: "/assets/roupas/shorts-teste-2.png" },
+                    { foto: "/assets/roupas/shorts-teste-2.png" },
+                    { foto: "/assets/roupas/shorts-teste-2.png" },
+                    { foto: "/assets/roupas/shorts-teste-2.png" },
+                    { foto: "/assets/roupas/shorts-teste-2.png" }
                 ],
                 preco: 49.90,
                 cores: [
                     {
-                        cor: "verde",
+                        cor: "#27AE60",
                         tamanhos: [
                             { tamanho: "P", quantidade: 2 },
                         ]
                     },
                     {
-                        cor: "preto",
+                        cor: "#000000",
                         tamanhos: [
                             { tamanho: "P", quantidade: 3 },
                         ]
                     },
                     {
-                        cor: "rosa",
+                        cor: "#FF78FF",
                         tamanhos: [
                             { tamanho: "P", quantidade: 1 },
                         ]
                     },
                     {
-                        cor: "amarelo",
+                        cor: "#FFFF00",
                         tamanhos: [
                             { tamanho: "P", quantidade: 7 },
                         ]
@@ -471,14 +485,14 @@ export const categoriasProdutos = [
                 preco: 42.90,
                 cores: [
                     {
-                        cor: "rosa",
+                        cor: "#FF78FF",
                         tamanhos: [
                             { tamanho: "P", quantidade: 1 },
                             { tamanho: "M", quantidade: 1 },
                         ]
                     },
                     {
-                        cor: "amarelo",
+                        cor: "#FFFF00",
                         tamanhos: [
                             { tamanho: "P", quantidade: 7 },
                             { tamanho: "M", quantidade: 2 },
@@ -582,7 +596,7 @@ export const categoriasProdutos = [
                 preco: 39.90,
                 cores: [
                     {
-                        cor: "preto",
+                        cor: "#000000",
                         tamanhos: [
                             { tamanho: "P", quantidade: 7 },
                             { tamanho: "M", quantidade: 1 },
@@ -692,7 +706,7 @@ export const categoriasProdutos = [
                 ],
                 cores: [
                     {
-                        cor: "rosa",
+                        cor: "#FF78FF",
                         tamanhos: [
                             { tamanho: "36", quantidade: 2 },
                         ]
@@ -869,28 +883,54 @@ export const lancamentos = todosProdutos.filter(p => p.lancamento);
 export const ofertas = todosProdutos.filter(p => p.ofertas?.[0]?.oferta);
 
 export function obterCategoriaSelecionada(categoriaURL) {
-  if (categoriaURL === 'lancamentos') {
-    return {
-      categoria: 'Lançamentos',
-      produtos: lancamentos,
-    };
-  }
+    if (categoriaURL === 'lancamentos') {
+        return {
+            categoria: 'Lançamentos',
+            produtos: lancamentos,
+        };
+    }
 
-  if (categoriaURL === 'ofertas') {
-    return {
-      categoria: 'Ofertas',
-      produtos: ofertas,
-    };
-  }
+    if (categoriaURL === 'ofertas') {
+        return {
+            categoria: 'Ofertas',
+            produtos: ofertas,
+        };
+    }
 
-  const encontrada = categoriasProdutos.find((cat) => urlFormat(cat.categoria) === categoriaURL);
+    const encontrada = categoriasProdutos.find((cat) => urlFormat(cat.categoria) === categoriaURL);
 
-  if (encontrada) {
-    return {
-      categoria: encontrada.categoria,
-      produtos: encontrada.produtos,
-    };
-  }
+    if (encontrada) {
+        return {
+            categoria: encontrada.categoria,
+            produtos: encontrada.produtos,
+        };
+    }
 
-  return null;
+    return null;
+}
+export function useQuery() {
+    return new URLSearchParams(useLocation().search)
+}
+export function resultadosBusca(termoBusca) {
+    if (!termoBusca) return []
+    return todosProdutos.filter(p => p.nome.toLowerCase().includes(termoBusca.toLowerCase()))
+}
+export function findProdutoPorId(idProduto) {
+    const idNum = Number(idProduto);
+
+    for (const categoria of categoriasProdutos) {
+        const produto = categoria.produtos.find(p => p.id === idNum);
+        if (produto) {
+            return produto;
+        }
+    }
+    return null;
+}
+export function handleTamanhos (corSelecionada, setCorSelecionada, indexCor, openTamanho, setOpenTamanho) {
+        if (corSelecionada === indexCor) {
+            setOpenTamanho(!openTamanho)
+        } else {
+            setCorSelecionada(indexCor);
+            setOpenTamanho(true)
+        }
 }

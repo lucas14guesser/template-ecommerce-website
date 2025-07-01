@@ -40,9 +40,6 @@ export const ListNav = styled.ul`
   flex-direction: row;
   gap: 2rem;
   list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {

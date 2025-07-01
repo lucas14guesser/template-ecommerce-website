@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { ContainerImgsCarousel, ImgsCarousel, Title, FontPreco, NewPrice, BtnDefault } from '../styles/GlobalStyles';
-import { precoFormat, settingsCarousel, urlFormat } from './home/HomeServices';
+import { precoFormat, settingsCarousel } from './home/HomeServices';
 import { Link } from 'react-router-dom';
 
 export default function CarouselCategoria({ categoria, produtos }) {
@@ -12,7 +12,7 @@ export default function CarouselCategoria({ categoria, produtos }) {
                 {produtos.map((produto, index) => (
                     <div key={index}>
                         <ContainerImgsCarousel>
-                            <Link to={`/produtos/${urlFormat(categoria)}/${urlFormat(produto.nome)}`}>
+                            <Link to={`/produtos/produto/${(produto.id)}`}>
                                 <ImgsCarousel src={produto.fotos[0].foto} alt={produto.nome} />
                             </Link>
                             <p>{produto.nome}</p>

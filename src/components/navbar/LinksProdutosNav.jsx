@@ -3,17 +3,15 @@ import { HamburgerButton, ListCategoriasNav, MobileMenu, Overlay } from './Navba
 import { LinksCategoria } from '../../services/GlobalServices'
 import { LinksCategorias } from '../../styles/GlobalStyles'
 import { IoIosMenu } from "react-icons/io";
+import { toggleMenuHamburguer } from './NavbarServices';
 
 
 export default function LinksProdutosNav() {
     const [menuHamburguer, setMenuHamburguer] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuHamburguer(!menuHamburguer);
-    }
     return (
         <>
-            <HamburgerButton onClick={toggleMenu}>
+            <HamburgerButton onClick={() => toggleMenuHamburguer(menuHamburguer, setMenuHamburguer)}>
                 <p><IoIosMenu /></p>
             </HamburgerButton>
             <ListCategoriasNav>
@@ -25,11 +23,11 @@ export default function LinksProdutosNav() {
             </ListCategoriasNav>
             {menuHamburguer && (
                 <>
-                    <Overlay onClick={toggleMenu} />
+                    <Overlay onClick={() => toggleMenuHamburguer(menuHamburguer, setMenuHamburguer)} />
                     <MobileMenu>
                         {LinksCategoria.map((links, index) => (
                             <li key={index}>
-                                <LinksCategorias to={links.link} title={links.nome} onClick={toggleMenu}>
+                                <LinksCategorias to={links.link} title={links.nome} onClick={() => toggleMenuHamburguer(menuHamburguer, setMenuHamburguer)}>
                                     {links.nome}
                                 </LinksCategorias>
                             </li>

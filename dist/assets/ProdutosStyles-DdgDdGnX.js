@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-export const ProdutosC = styled.div`
+import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,8 +23,7 @@ export const ProdutosC = styled.div`
     padding: 1.5rem;
     flex-direction: column;
   }
-`
-export const ProdutoImg = styled.img`
+`,r=e.img`
   width: 10rem;
   height: 10rem;
   transition: var(--trans-time);
@@ -45,8 +42,7 @@ export const ProdutoImg = styled.img`
     width: 6rem;
     height: 6rem;
   }
-`
-export const ProdutoC = styled.div`
+`,d=e.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
@@ -59,8 +55,7 @@ export const ProdutoC = styled.div`
   @media (max-width: 480px) {
     padding: 1.5rem;
   }
-`
-export const InfosProd = styled.div`
+`,a=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,8 +64,7 @@ export const InfosProd = styled.div`
   @media (max-width: 480px) {
     gap: 0.3rem;
   }
-`
-export const ProdutoS = styled.div`
+`,m=e.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -81,8 +75,7 @@ export const ProdutoS = styled.div`
     gap: 1rem;
     align-items: center;
   }
-`
-export const ImgPC = styled.div`
+`,o=e.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -105,8 +98,7 @@ export const ImgPC = styled.div`
     padding: 0.5rem;
     gap: 1rem;
   }
-`
-export const FilterList = styled.ul`
+`,n=e.ul`
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -117,8 +109,7 @@ export const FilterList = styled.ul`
   @media (max-width: 480px) {
     gap: 0.5rem;
   }
-`
-export const BtnFilter = styled.button`
+`,p=e.button`
   width: 2rem;
   height: 2rem;
   border: none;
@@ -134,4 +125,4 @@ export const BtnFilter = styled.button`
     width: 1.5rem;
     height: 1.5rem;
   }
-`
+`;export{p as B,n as F,a as I,t as P,o as a,r as b,d as c,m as d};

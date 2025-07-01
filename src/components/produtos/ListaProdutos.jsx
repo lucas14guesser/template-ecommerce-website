@@ -2,7 +2,7 @@ import React from 'react'
 import { BtnDefault, ContainerImgsCarousel, FontPreco, ImgsCarousel, NewPrice, Title } from '../../styles/GlobalStyles'
 import { ProdutosC } from './ProdutosStyles'
 import { Link } from 'react-router-dom'
-import { precoFormat, urlFormat } from '../home/HomeServices'
+import { precoFormat } from '../home/HomeServices'
 
 export default function ListaProdutos({ categoria, produtos }) {
     return (
@@ -12,7 +12,7 @@ export default function ListaProdutos({ categoria, produtos }) {
                 {produtos.map((produto, index) => (
                     <div key={index}>
                         <ContainerImgsCarousel>
-                            <Link to={urlFormat(produto.nome)}>
+                            <Link to={`/produtos/produto/${(produto.id)}`}>
                                 <ImgsCarousel src={produto.fotos[0].foto} alt={produto.nome} />
                             </Link>
                             <p>{produto.nome}</p>

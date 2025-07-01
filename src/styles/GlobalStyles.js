@@ -77,6 +77,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: var(--font-txt);
     font-size: var(--font-txt-sz);
   }
+
+  ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
 `
 export const LinksCategorias = styled(Link)`
   text-decoration: none;
@@ -273,4 +279,10 @@ export const Subcontainer = styled.div`
 `
 export const IconesP = styled.p`
   font-size: var(--font-destq-sz);
+`
+export const DivFlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 `

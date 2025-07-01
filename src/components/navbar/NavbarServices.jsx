@@ -36,3 +36,13 @@ export const UserLinks = [
         link: "/meu-carrinho"
     },
 ]
+export function toggleMenuHamburguer (Menu, setMenu) {
+    return setMenu(!Menu); 
+}
+export function handleSearchSubmit (e, busca, navigate, urlQuery) {
+    e.preventDefault();
+
+    if(busca.trim()) {
+        navigate(`${urlQuery}${encodeURIComponent(busca.trim())}`)
+    }
+}

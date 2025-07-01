@@ -93,6 +93,12 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
     font-family: var(--font-txt);
     font-size: var(--font-txt-sz);
   }
+
+  ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
 `,ja=U(ot)`
   text-decoration: none;
   color: var(--color-txt);
@@ -276,4 +282,9 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   }
 `,Xa=U.p`
   font-size: var(--font-destq-sz);
-`;export{za as B,Ha as C,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,ja as c,U as d,Ta as e,en as f,Oa as g,Wa as h,Ma as i,La as j,Ga as k,Ja as l,Va as m,re as n,Xa as o,on as r,Na as u};
+`,Za=U.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+`;export{za as B,Ha as C,Za as D,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,ja as c,U as d,Ta as e,en as f,Oa as g,Wa as h,Ma as i,La as j,Na as k,Ga as l,Ja as m,Va as n,re as o,Xa as p,de as q,on as r,Nn as u};
