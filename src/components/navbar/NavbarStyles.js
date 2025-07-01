@@ -43,12 +43,64 @@ export const ListNav = styled.ul`
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
+`
+export const ListCategoriasNav = styled.ul`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+export const HamburgerButton = styled.button`
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        position: relative;
+    }
+`
+export const MobileMenu = styled.ul`
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 12rem;
+    height: 100vh;
+    background-color: #fff;
+    list-style: none;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+
+    li {
+        margin: 15px 0;
+    }
+`
+export const Overlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
 `
 export const LinkSocialMedia = styled(Link)`
   text-decoration: none;

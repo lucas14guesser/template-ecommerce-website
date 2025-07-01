@@ -57,7 +57,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   @media (max-width: 480px) {
     :root {
       --font-txt-sz: 0.85rem;
-      --font-destq-sz: 1rem;
+      --font-destq-sz: .9rem;
       --font-icon-sz: 1.2rem;
       --font-title-sz: 1.4rem;
     }
@@ -73,6 +73,14 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
     background-color: var(--color-bg);
     color: var(--color-txt);
     font-size: var(--font-txt-sz);
+
+    @media (max-width: 768px) {
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 480px) {
+      overflow-x: hidden;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -147,13 +155,13 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   height: 15rem;
 
   @media (max-width: 768px) {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   @media (max-width: 480px) {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
   }
 `,Wa=U.button`
   width: 13rem;
@@ -164,6 +172,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   color: var(--color-txt);
   background-color: var(--color-bg);
   transition: var(--trans-time);
+  font-size: var(--font-text-sz);
 
   &:hover {
     background-color: var(--color-hover);
@@ -183,14 +192,6 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   font-size: var(--font-destq-sz);
   font-weight: 600;
   font-family: var(--font-title);
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
 `,qa=U.div`
   display: flex;
   flex-direction: row;
@@ -275,4 +276,4 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   }
 `,Xa=U.p`
   font-size: var(--font-destq-sz);
-`;export{za as B,Ha as C,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,ja as b,d as c,U as d,Ta as e,en as f,Oa as g,Wa as h,Ma as i,La as j,Ga as k,Ja as l,Va as m,re as n,Xa as o,on as r,Na as u};
+`;export{za as B,Ha as C,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,ja as c,U as d,Ta as e,en as f,Oa as g,Wa as h,Ma as i,La as j,Ga as k,Ja as l,Va as m,re as n,Xa as o,on as r,Na as u};

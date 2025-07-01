@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
   @media (max-width: 480px) {
     :root {
       --font-txt-sz: 0.85rem;
-      --font-destq-sz: 1rem;
+      --font-destq-sz: .9rem;
       --font-icon-sz: 1.2rem;
       --font-title-sz: 1.4rem;
     }
@@ -57,6 +57,14 @@ export const GlobalStyles = createGlobalStyle`
     background-color: var(--color-bg);
     color: var(--color-txt);
     font-size: var(--font-txt-sz);
+
+    @media (max-width: 768px) {
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 480px) {
+      overflow-x: hidden;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -136,13 +144,13 @@ export const ImgsCarousel = styled.img`
   height: 15rem;
 
   @media (max-width: 768px) {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   @media (max-width: 480px) {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
   }
 `
 export const BtnDefault = styled.button`
@@ -154,6 +162,7 @@ export const BtnDefault = styled.button`
   color: var(--color-txt);
   background-color: var(--color-bg);
   transition: var(--trans-time);
+  font-size: var(--font-text-sz);
 
   &:hover {
     background-color: var(--color-hover);
@@ -174,14 +183,6 @@ export const FontPreco = styled.p`
   font-size: var(--font-destq-sz);
   font-weight: 600;
   font-family: var(--font-title);
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
 `
 export const NewPrice = styled.div`
   display: flex;
