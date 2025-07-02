@@ -21,8 +21,8 @@ export const FunctionsUser = styled(Link)`
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-txt);
+  background-color: var(--color-btn);
+  border: 1px solid var(--color-bg-section);
   border-radius: 8px;
   cursor: pointer;
   transition: var(--trans-time);
@@ -30,6 +30,7 @@ export const FunctionsUser = styled(Link)`
   width: 10rem;
   color: var(--color-txt);
   text-decoration: none;
+  color: var(--color-bg-section);
 
   &:hover {
     background-color: var(--color-hover);

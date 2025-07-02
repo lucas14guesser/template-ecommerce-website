@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   padding: 2rem 5rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   gap: 2rem;
   box-shadow: 3px 3px 3px var(--color-somb);
 
@@ -133,9 +133,16 @@ export const LinkHomeTxt = styled(Link)`
     text-align: center;
   }
 `
+export const SearchWrapper = styled.form`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3.5rem;
+`
 export const SearchIpt = styled.input`
   width: 20rem;
-  padding: 1rem;
+  height: 100%;
+  padding: 0 1rem;
   color: var(--color-txt);
   outline: none;
   border-top-left-radius: 8px;
@@ -143,20 +150,15 @@ export const SearchIpt = styled.input`
   border: 1px solid var(--color-txt);
   border-right: none;
   font-size: var(--font-txt-sz);
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     width: 15rem;
-    padding: 0.8rem;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
-    max-width: 10rem;
   }
 `
 export const BtnSearch = styled.button`
   width: 3rem;
-  padding: 1.06rem;
+  height: 100%;
   color: var(--color-bg);
   background-color: var(--color-txt);
   border: 1px solid var(--color-txt);
@@ -165,14 +167,12 @@ export const BtnSearch = styled.button`
   border-bottom-right-radius: 8px;
   cursor: pointer;
   transition: var(--trans-time);
+  box-sizing: border-box;
 
   &:hover {
     background-color: var(--color-hover);
   }
 
-  @media (max-width: 768px) {
-    padding: 0.8rem;
-  }
 `
 export const ContactContainer = styled.div`
   display: flex;

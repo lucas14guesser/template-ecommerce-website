@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaSearch } from "react-icons/fa";
-import { BtnSearch, SearchIpt } from './NavbarStyles';
+import { BtnSearch, SearchIpt, SearchWrapper } from './NavbarStyles';
 import { useNavigate } from 'react-router-dom';
 import { handleSearchSubmit } from './NavbarServices';
 
@@ -9,9 +9,9 @@ export default function SearchNav() {
   const navigate = useNavigate();
 
   return (
-        <form onSubmit={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}>
+        <SearchWrapper onSubmit={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}>
           <SearchIpt type="text" placeholder='Buscar' value={busca} onChange={(e) => setBusca(e.target.value)} />
           <BtnSearch type='submit' onClick={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}><FaSearch /></BtnSearch>
-        </form>
+        </SearchWrapper>
   )
 }

@@ -5,7 +5,7 @@ export const FooterG = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 4rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   box-shadow: -3px -3px 3px var(--color-somb);
 
   @media (max-width: 1024px) {

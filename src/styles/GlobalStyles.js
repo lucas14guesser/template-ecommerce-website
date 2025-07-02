@@ -6,11 +6,13 @@ export const GlobalStyles = createGlobalStyle`
     --font-txt: "Roboto", sans-serif;
     --font-title: "Oswald", sans-serif;
 
-    --color-bg: #F6F3EF;
+    --color-bg: #F0ECE7;
     --color-txt: #362004;
     --color-bg-section: #FFFFFF;
+    --color-bg-sec: #E0DED9;
     --color-hover: #757472;
-    --color-somb: #888;
+    --color-somb: #8A8B6F;
+    --color-btn: #A63F2C;
 
     --trans-time: .5s;
 
@@ -161,11 +163,11 @@ export const ImgsCarousel = styled.img`
 export const BtnDefault = styled.button`
   width: 13rem;
   padding: 1rem;
-  border: 1px solid var(--color-txt);
+  border: 1px solid var(--color-bg-section);
   border-radius: 8px;
   cursor: pointer;
-  color: var(--color-txt);
-  background-color: var(--color-bg);
+  color: var(--color-bg-section);
+  background-color: var(--color-btn);
   transition: var(--trans-time);
   font-size: var(--font-text-sz);
 
@@ -284,4 +286,13 @@ export const DivFlexRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+`
+export const DivFlexColm = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`
+export const TopicFont = styled.p`
+  font-size: var(--font-destq-sz);
 `
