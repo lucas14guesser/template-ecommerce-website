@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import MinhaConta from "../pages/MinhaConta";
 import ProdutoEspecifico from "../pages/ProdutoEspecifico";
 import Produtos from "../pages/Produtos";
+import SegurancaEPrivacidade from "../pages/SegurancaEPrivacidade";
 
 export const routeList = [
     {
@@ -33,5 +34,17 @@ export const routeList = [
     {
         caminho: '/minha-conta',
         componente: <MinhaConta />,
+    },
+    {
+        caminho: '/trocas-devolucoes',
+        componente: <SegurancaEPrivacidade />,
+    },
+    {
+        caminho: '/politica-privacidade',
+        componente: <SegurancaEPrivacidade />,
+    },
+    {
+        caminho: '/perguntas-frequentes',
+        componente: <SegurancaEPrivacidade />,
     },
 ]

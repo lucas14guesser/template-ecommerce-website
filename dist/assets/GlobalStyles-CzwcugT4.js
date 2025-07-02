@@ -91,7 +91,6 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
 
   button {
     font-family: var(--font-txt);
-    font-size: var(--font-txt-sz);
   }
 
   ul {
@@ -287,4 +286,4 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-`;export{za as B,Ha as C,Za as D,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,ja as c,U as d,Ta as e,en as f,Oa as g,Wa as h,Ma as i,La as j,Na as k,Ga as l,Ja as m,Va as n,re as o,Xa as p,de as q,on as r,Nn as u};
+`;export{za as B,Ma as C,Za as D,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,Nn as c,U as d,ja as e,Ta as f,Oa as g,en as h,Ha as i,La as j,Wa as k,Na as l,Ga as m,Ja as n,Va as o,re as p,Xa as q,on as r,de as u};

@@ -1,7 +1,7 @@
 export const PrivacidadeSeg = [
     {
         nome: "Trocas e Devoluções",
-        link: "/troca-devolucao"
+        link: "/trocas-devolucoes"
     },
     {
         nome: "Política de Privacidade",

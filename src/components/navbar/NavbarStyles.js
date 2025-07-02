@@ -156,7 +156,7 @@ export const SearchIpt = styled.input`
 `
 export const BtnSearch = styled.button`
   width: 3rem;
-  padding: 0.9rem;
+  padding: 1.06rem;
   color: var(--color-bg);
   background-color: var(--color-txt);
   border: 1px solid var(--color-txt);

@@ -11,7 +11,7 @@ export default function SearchNav() {
   return (
         <form onSubmit={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}>
           <SearchIpt type="text" placeholder='Buscar' value={busca} onChange={(e) => setBusca(e.target.value)} />
-          <BtnSearch type='submit'><FaSearch /></BtnSearch>
+          <BtnSearch type='submit' onClick={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}><FaSearch /></BtnSearch>
         </form>
   )
 }

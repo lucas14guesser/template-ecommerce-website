@@ -1,4 +1,4 @@
-import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
+import{d as e}from"./GlobalStyles-CzwcugT4.js";const r=e.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,7 +6,7 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
   background-color: var(--color-bg-section);
   padding: 3rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: 1024px) {
     gap: 4rem;
@@ -21,9 +21,8 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
   @media (max-width: 480px) {
     gap: 1.5rem;
     padding: 1.5rem;
-    flex-direction: column;
   }
-`,r=e.img`
+`,t=e.img`
   width: 10rem;
   height: 10rem;
   transition: var(--trans-time);
@@ -42,7 +41,7 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
     width: 6rem;
     height: 6rem;
   }
-`,d=e.div`
+`,a=e.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
@@ -55,7 +54,7 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
   @media (max-width: 480px) {
     padding: 1.5rem;
   }
-`,a=e.div`
+`,d=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +114,11 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: var(--trans-time);
+
+  &:hover {
+    border: 1px solid var(--color-txt);
+  }
 
   @media (max-width: 768px) {
     width: 1.8rem;
@@ -125,4 +129,4 @@ import{d as e}from"./GlobalStyles-CWBnrcME.js";const t=e.div`
     width: 1.5rem;
     height: 1.5rem;
   }
-`;export{p as B,n as F,a as I,t as P,o as a,r as b,d as c,m as d};
+`;export{p as B,n as F,d as I,r as P,o as a,t as b,a as c,m as d};

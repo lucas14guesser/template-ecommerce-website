@@ -8,7 +8,7 @@ export const ProdutosC = styled.div`
   background-color: var(--color-bg-section);
   padding: 3rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: 1024px) {
     gap: 4rem;
@@ -23,7 +23,6 @@ export const ProdutosC = styled.div`
   @media (max-width: 480px) {
     gap: 1.5rem;
     padding: 1.5rem;
-    flex-direction: column;
   }
 `
 export const ProdutoImg = styled.img`
@@ -124,6 +123,11 @@ export const BtnFilter = styled.button`
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: var(--trans-time);
+
+  &:hover {
+    border: 1px solid var(--color-txt);
+  }
 
   @media (max-width: 768px) {
     width: 1.8rem;

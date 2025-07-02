@@ -75,7 +75,6 @@ export const GlobalStyles = createGlobalStyle`
 
   button {
     font-family: var(--font-txt);
-    font-size: var(--font-txt-sz);
   }
 
   ul {

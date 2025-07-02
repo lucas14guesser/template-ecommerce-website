@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 export const LinksCategoria = [
     {
         nome: "Ofertas",
@@ -40,3 +43,12 @@ export const LinksCategoria = [
         link: "/produtos/acessorios"
     },
 ]
+
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
