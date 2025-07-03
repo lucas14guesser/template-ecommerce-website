@@ -30,7 +30,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
     --color-somb: #8A8B6F;
     --color-btn: #A63F2C;
 
-    --trans-time: .5s;
+    --trans-time: .7s;
 
     --font-txt-sz: 1rem;
     --font-destq-sz: 1.3rem;
@@ -147,7 +147,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   border: 1px solid var(--color-txt);
 
   @media (max-width: 768px) {
@@ -173,7 +173,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
 `,Wa=B.button`
   width: 13rem;
   padding: 1rem;
-  border: 1px solid var(--color-bg-section);
+  border: 1px solid var(--color-bg-sec);
   border-radius: 8px;
   cursor: pointer;
   color: var(--color-bg-section);
@@ -214,7 +214,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   border: 1px solid var(--color-txt);
   padding: 2rem;
   align-items: center;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   gap: 1rem;
 
   @media (max-width: 1024px) {
@@ -263,7 +263,7 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   flex-direction: column;
   align-items: flex-start;
   gap: 5.5rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   padding: 3rem;
   flex-wrap: wrap;
 
@@ -295,4 +295,4 @@ Please change the parent <Route path="${f}"> to <Route path="${f==="/"?"*":`${f}
   gap: 1rem;
 `;const Qa=B.p`
   font-size: var(--font-destq-sz);
-`;export{za as B,Ma as C,Za as D,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Qa as a,Kn as b,d as c,B as d,Nn as e,ja as f,Ta as g,Oa as h,en as i,La as j,Ha as k,Wa as l,Na as m,Ga as n,Ja as o,Va as p,re as q,on as r,Xa as s,de as u};
+`;export{za as B,Ha as C,Za as D,Ya as F,Fa as G,Ua as I,ot as L,qa as N,Da as R,Ka as S,Ba as T,Kn as a,d as b,de as c,B as d,ja as e,Ta as f,Oa as g,en as h,Wa as i,La as j,Ma as k,Na as l,Ga as m,Ja as n,Va as o,re as p,Xa as q,on as r,Qa as s,Nn as u};

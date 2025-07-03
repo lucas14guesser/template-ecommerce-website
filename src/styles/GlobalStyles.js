@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-somb: #8A8B6F;
     --color-btn: #A63F2C;
 
-    --trans-time: .5s;
+    --trans-time: .7s;
 
     --font-txt-sz: 1rem;
     --font-destq-sz: 1.3rem;
@@ -135,7 +135,7 @@ export const ContainerImgsCarousel = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   border: 1px solid var(--color-txt);
 
   @media (max-width: 768px) {
@@ -163,7 +163,7 @@ export const ImgsCarousel = styled.img`
 export const BtnDefault = styled.button`
   width: 13rem;
   padding: 1rem;
-  border: 1px solid var(--color-bg-section);
+  border: 1px solid var(--color-bg-sec);
   border-radius: 8px;
   cursor: pointer;
   color: var(--color-bg-section);
@@ -207,7 +207,7 @@ export const Formulario = styled.form`
   border: 1px solid var(--color-txt);
   padding: 2rem;
   align-items: center;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   gap: 1rem;
 
   @media (max-width: 1024px) {
@@ -259,7 +259,7 @@ export const Subcontainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 5.5rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   padding: 3rem;
   flex-wrap: wrap;
 

@@ -5,7 +5,7 @@ export const ProdutosC = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 5.5rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
   padding: 3rem;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -49,7 +49,7 @@ export const ProdutoC = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-sec);
 
   @media (max-width: 768px) {
     padding: 2rem;
