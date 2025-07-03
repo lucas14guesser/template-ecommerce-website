@@ -17,3 +17,16 @@ export const InfosGrid = [
         icone: <FaRegUser />
     },
 ]
+export const infosUserData = [
+    {
+        campo: 'nome',
+        valor: 'User'
+    },
+    {
+        campo: 'email',
+        valor: 'E-mail@email.com'
+    },
+]
+export function handleInputEdit (inputEdit, setInputEdit) {
+    return setInputEdit(!inputEdit);
+}

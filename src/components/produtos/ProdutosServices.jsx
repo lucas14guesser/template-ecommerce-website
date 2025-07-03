@@ -72,6 +72,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/blusa-teste-5.png" }
                 ],
                 preco: 89.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 59.90 }
+                ]
             },
             {
                 id: 21,
@@ -104,6 +107,9 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/blusa-teste-9.png" }
                 ],
                 preco: 89.90,
+                ofertas: [
+                    { oferta: true, novoPreco: 69.90 }
+                ]
             },
             {
                 id: 25,
@@ -926,11 +932,11 @@ export function findProdutoPorId(idProduto) {
     }
     return null;
 }
-export function handleTamanhos (corSelecionada, setCorSelecionada, indexCor, openTamanho, setOpenTamanho) {
-        if (corSelecionada === indexCor) {
-            setOpenTamanho(!openTamanho)
-        } else {
-            setCorSelecionada(indexCor);
-            setOpenTamanho(true)
-        }
+export function handleTamanhos(corSelecionada, setCorSelecionada, indexCor, openTamanho, setOpenTamanho) {
+    if (corSelecionada === indexCor) {
+        setOpenTamanho(!openTamanho)
+    } else {
+        setCorSelecionada(indexCor);
+        setOpenTamanho(true)
+    }
 }

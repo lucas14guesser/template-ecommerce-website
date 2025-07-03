@@ -52,3 +52,6 @@ export function ScrollToTop() {
 
   return null
 }
+export function handleModal (modal, setModal) {
+    return setModal(!modal)
+}

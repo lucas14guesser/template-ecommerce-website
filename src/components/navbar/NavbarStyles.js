@@ -172,7 +172,6 @@ export const BtnSearch = styled.button`
   &:hover {
     background-color: var(--color-hover);
   }
-
 `
 export const ContactContainer = styled.div`
   display: flex;

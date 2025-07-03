@@ -16,6 +16,7 @@ export default defineConfig({
         minhaConta: resolve(__dirname, './src/pages/MinhaConta.jsx'),
         produtoEspecifico: resolve(__dirname, './src/pages/ProdutoEspecifico.jsx'),
         segurancaPrivacidade: resolve(__dirname, './src/pages/SegurancaEPrivacidade.jsx'),
+        userData: resolve(__dirname, './src/pages/UserData.jsx'),
       }
     }
   }

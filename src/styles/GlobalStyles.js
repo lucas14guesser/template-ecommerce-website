@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-txt: #362004;
     --color-bg-section: #FFFFFF;
     --color-bg-sec: #E0DED9;
-    --color-hover: #757472;
+    --color-hover: #8A8B6F;
     --color-somb: #8A8B6F;
     --color-btn: #A63F2C;
 
@@ -84,6 +84,24 @@ export const GlobalStyles = createGlobalStyle`
     margin-block-end: 0;
     padding-inline-start: 0;
   }
+`
+export const ModalC = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+`
+export const ModalContent = styled.div`
+background-color: var(--color-bg-sec);
+padding: 1rem;
+border-radius: 8px;
+max-width: 75rem;
+width: 100%;
 `
 export const LinksCategorias = styled(Link)`
   text-decoration: none;
@@ -231,6 +249,7 @@ export const FormInput = styled.input`
   border-radius: 8px;
   font-size: var(--font-txt-sz);
   outline: none;
+  background-color: var(--color-bg-section);
 
   @media (max-width: 1024px) {
     width: 30rem;
@@ -286,13 +305,32 @@ export const DivFlexRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  background-color: var(--color-bg-sec);
+  padding: 2rem;
 `
 export const DivFlexColm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background-color: var(--color-bg-sec);
+  padding: 2rem;
 `
 export const TopicFont = styled.p`
   font-size: var(--font-destq-sz);
+`
+export const BtnIcon = styled.button`
+  width: 3rem;
+  color: var(--color-bg);
+  background-color: var(--color-btn);
+  border: 1px solid var(--color-bg-sec);
+  cursor: pointer;
+  transition: var(--trans-time);
+  box-sizing: border-box;
+  padding: .6rem 0;
+  font-size: var(--font-destq-sz);
+
+  &:hover {
+    background-color: var(--color-hover);
+  }
 `
