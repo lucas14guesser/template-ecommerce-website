@@ -404,7 +404,7 @@ export const Thead = styled.thead`
 export const Th = styled.th`
   padding: 12px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 
   @media (max-width: 1024px) {
     padding: 10px;
