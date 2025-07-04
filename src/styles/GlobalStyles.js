@@ -84,6 +84,9 @@ export const GlobalStyles = createGlobalStyle`
     margin-block-end: 0;
     padding-inline-start: 0;
   }
+  a {
+    color: var(--color-txt);
+  }
 `
 export const ModalC = styled.div`
   display: flex;
@@ -146,6 +149,12 @@ export const Title = styled.h1`
   @media (max-width: 480px) {
     font-size: 1.5rem;
   }
+`
+export const LinkProd = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 export const ContainerImgsCarousel = styled.div`
   display: flex;
@@ -252,15 +261,15 @@ export const FormInput = styled.input`
   background-color: var(--color-bg-section);
 
   @media (max-width: 1024px) {
-    width: 30rem;
-  }
-
-  @media (max-width: 768px) {
     width: 25rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     width: 20rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 15rem;
   }
 `
 export const LinkDefault = styled(Link)`
@@ -321,9 +330,9 @@ export const TopicFont = styled.p`
 `
 export const BtnIcon = styled.button`
   width: 3rem;
-  color: var(--color-bg);
-  background-color: var(--color-btn);
-  border: 1px solid var(--color-bg-sec);
+  color: var(--color-btn);
+  background-color: var(--color-bg-sec);
+  border: none;
   cursor: pointer;
   transition: var(--trans-time);
   box-sizing: border-box;
@@ -331,6 +340,6 @@ export const BtnIcon = styled.button`
   font-size: var(--font-destq-sz);
 
   &:hover {
-    background-color: var(--color-hover);
+    color: var(--color-hover);
   }
 `

@@ -699,6 +699,7 @@ export const categoriasProdutos = [
                     }
                 ],
                 lancamento: true,
+                favorito: true,
             },
             {
                 id: 11,
@@ -840,6 +841,7 @@ export const categoriasProdutos = [
                     { foto: "/assets/roupas/bolsa-teste-1.png" }
                 ],
                 preco: 329.90,
+                favorito: true,
             },
             {
                 id: 91,
@@ -887,6 +889,7 @@ export const categoriasProdutos = [
 export const todosProdutos = categoriasProdutos.flatMap(cat => cat.produtos);
 export const lancamentos = todosProdutos.filter(p => p.lancamento);
 export const ofertas = todosProdutos.filter(p => p.ofertas?.[0]?.oferta);
+export const favoritos = todosProdutos.filter(p => p.favorito);
 
 export function obterCategoriaSelecionada(categoriaURL) {
     if (categoriaURL === 'lancamentos') {

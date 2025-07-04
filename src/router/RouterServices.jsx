@@ -25,6 +25,10 @@ export const routeList = [
         componente: <Produtos paginaBusca={true} />,
     },
     {
+        caminho: '/meus-favoritos',
+        componente: <Produtos paginaFavoritos={true} />,
+    },
+    {
         caminho: '/login',
         componente: <Login />,
     },

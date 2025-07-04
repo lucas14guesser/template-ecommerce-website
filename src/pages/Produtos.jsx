@@ -5,14 +5,19 @@ import ListaProdutos from '../components/produtos/ListaProdutos'
 import { obterCategoriaSelecionada } from '../components/produtos/ProdutosServices'
 import BuscaProdutos from '../components/produtos/BuscaProdutos'
 import { urlFormat } from '../components/home/HomeServices'
+import Favoritos from './Favoritos'
 
-export default function Produtos({ paginaBusca = false }) {
+export default function Produtos({ paginaBusca = false, paginaFavoritos = false }) {
   const { categoria } = useParams()
   const categoriaURL = categoria ? urlFormat(categoria) : null
   const categoriaSelecionada = categoriaURL ? obterCategoriaSelecionada(categoriaURL) : null
 
   if (paginaBusca) {
     return <BuscaProdutos />
+  }
+
+  if (paginaFavoritos) {
+    return <Favoritos />
   }
 
   return (

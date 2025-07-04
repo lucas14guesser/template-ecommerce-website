@@ -1,4 +1,4 @@
-import{d as e}from"./GlobalStyles-BbNLWQ9T.js";const r=e.div`
+import{d as e}from"./GlobalStyles-DIxeZAo1.js";const r=e.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -129,4 +129,4 @@ import{d as e}from"./GlobalStyles-BbNLWQ9T.js";const r=e.div`
     width: 1.5rem;
     height: 1.5rem;
   }
-`;export{p as B,n as F,d as I,r as P,o as a,t as b,a as c,m as d};
+`;export{p as B,n as F,d as I,t as P,o as a,a as b,m as c,r as d};
