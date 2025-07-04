@@ -343,3 +343,101 @@ export const BtnIcon = styled.button`
     color: var(--color-hover);
   }
 `
+export const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+
+  @media (max-width: 1024px) {
+    overflow-x: auto;
+  }
+
+  @media (max-width: 768px) {
+    overflow-x: auto;
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    overflow-x: auto;
+    width: 60%;
+  }
+`
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-btn);
+  background-color: var(--color-bg-section);
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+`
+export const Thead = styled.thead`
+  background-color: var(--color-btn);
+  color: var(--color-bg-section);
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+`
+export const Th = styled.th`
+  padding: 12px;
+  font-weight: bold;
+  text-align: left;
+
+  @media (max-width: 1024px) {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px;
+    font-size: 13px;
+  }
+`
+export const Td = styled.td`
+  padding: 10px;
+  vertical-align: middle;
+  border: 1px solid var(--color-btn);
+
+  @media (max-width: 1024px) {
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 5px;
+    font-size: 13px;
+  }
+`

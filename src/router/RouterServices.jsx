@@ -2,6 +2,7 @@ import Cadastro from "../pages/Cadastro";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MinhaConta from "../pages/MinhaConta";
+import Pedidos from "../pages/Pedidos";
 import ProdutoEspecifico from "../pages/ProdutoEspecifico";
 import Produtos from "../pages/Produtos";
 import SegurancaEPrivacidade from "../pages/SegurancaEPrivacidade";
@@ -55,5 +56,9 @@ export const routeList = [
     {
         caminho: '/meus-dados',
         componente: <UserData />,
+    },
+    {
+        caminho: '/meus-pedidos',
+        componente: <Pedidos />,
     },
 ]

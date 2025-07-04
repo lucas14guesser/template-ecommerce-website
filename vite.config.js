@@ -18,6 +18,7 @@ export default defineConfig({
         segurancaPrivacidade: resolve(__dirname, './src/pages/SegurancaEPrivacidade.jsx'),
         userData: resolve(__dirname, './src/pages/UserData.jsx'),
         favoritos: resolve(__dirname, './src/pages/Favoritos.jsx'),
+        pedidos: resolve(__dirname, './src/pages/Pedidos.jsx'),
       }
     }
   }

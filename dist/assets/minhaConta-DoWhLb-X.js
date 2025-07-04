@@ -1,4 +1,4 @@
-import{d as o,L as t,j as r,S as a,T as n,p as d,k as s}from"./GlobalStyles-DIxeZAo1.js";import{I as c}from"./UserServices-A6czU_s6.js";const m=o.div`
+import{d as n,L as t,j as r,S as a,T as e,p as d,k as s}from"./GlobalStyles-Fc1MBz0A.js";import{u as c,I as m}from"./UserServices-D71HVinE.js";import"./index-vtQ15SaZ.js";const l=n.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
@@ -10,7 +10,7 @@ import{d as o,L as t,j as r,S as a,T as n,p as d,k as s}from"./GlobalStyles-DIxe
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
-`,l=o(t)`
+`,x=n(t)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,4 +49,4 @@ import{d as o,L as t,j as r,S as a,T as n,p as d,k as s}from"./GlobalStyles-DIxe
     flex-direction: column;
     gap: 0.5rem;
   }
-`;function x(){return r.jsxs(a,{children:[r.jsx(n,{children:'Boas-vindas "User"'}),r.jsx(m,{children:c.map((i,e)=>r.jsxs(l,{to:i.link,children:[r.jsx(d,{children:i.icone}),r.jsx("p",{children:i.funcao})]},e))})]})}function h(){return r.jsxs(s,{children:[r.jsx("title",{children:"Minha Conta"}),r.jsx(n,{children:"Painel do Usuário"}),r.jsx(x,{}),r.jsx("div",{})]})}export{h as M};
+`;function p(){return r.jsxs(a,{children:[c.map((i,o)=>r.jsxs(e,{children:["Boas-vindas ",i.nome]},o)),r.jsx(l,{children:m.map((i,o)=>r.jsxs(x,{to:i.link,children:[r.jsx(d,{children:i.icone}),r.jsx("p",{children:i.funcao})]},o))})]})}function j(){return r.jsxs(s,{children:[r.jsx("title",{children:"Minha Conta"}),r.jsx(e,{children:"Painel do Usuário"}),r.jsx(p,{}),r.jsx("div",{})]})}export{j as M};
