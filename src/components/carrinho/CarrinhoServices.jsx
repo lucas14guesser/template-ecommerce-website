@@ -1,8 +1,7 @@
-export const listaPedidos = [
+export const produtosCarrinho = [
     {
         id: 1,
         user: 1,
-        status: 'Finalizado',
         quantidade: 1,
         produtos: [
             {
@@ -32,7 +31,6 @@ export const listaPedidos = [
     {
         id: 2,
         user: 1,
-        status: 'Finalizado',
         quantidade: 1,
         produtos: [
             {
@@ -56,6 +54,5 @@ export const listaPedidos = [
         ]
     },
 ]
-export function handleHiddenPedidos(hidden, setHidden) {
-    return setHidden(!hidden)
-}
+
+export const subtotal = produtosCarrinho.reduce((acc, p) => acc + p.produtos[0].preco * p.quantidade, 0).toFixed(2)

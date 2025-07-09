@@ -1,4 +1,5 @@
 import Cadastro from "../pages/Cadastro";
+import Carrinho from "../pages/Carrinho";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MinhaConta from "../pages/MinhaConta";
@@ -60,5 +61,9 @@ export const routeList = [
     {
         caminho: '/meus-pedidos',
         componente: <Pedidos />,
+    },
+    {
+        caminho: '/meu-carrinho',
+        componente: <Carrinho />,
     },
 ]

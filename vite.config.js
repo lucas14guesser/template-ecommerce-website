@@ -19,6 +19,7 @@ export default defineConfig({
         userData: resolve(__dirname, './src/pages/UserData.jsx'),
         favoritos: resolve(__dirname, './src/pages/Favoritos.jsx'),
         pedidos: resolve(__dirname, './src/pages/Pedidos.jsx'),
+        carrinho: resolve(__dirname, './src/pages/Carrinho.jsx'),
       }
     }
   }
