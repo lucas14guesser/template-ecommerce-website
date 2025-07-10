@@ -20,6 +20,8 @@ export default defineConfig({
         favoritos: resolve(__dirname, './src/pages/Favoritos.jsx'),
         pedidos: resolve(__dirname, './src/pages/Pedidos.jsx'),
         carrinho: resolve(__dirname, './src/pages/Carrinho.jsx'),
+        admPedidos: resolve(__dirname, './src/pages/AdmPedidos.jsx'),
+        admProdutos: resolve(__dirname, './src/pages/AdmProdutos.jsx'),
       }
     }
   }

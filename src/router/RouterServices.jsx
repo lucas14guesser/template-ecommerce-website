@@ -1,3 +1,5 @@
+import AdmPedidos from "../pages/AdmPedidos";
+import AdmProdutos from "../pages/AdmProdutos";
 import Cadastro from "../pages/Cadastro";
 import Carrinho from "../pages/Carrinho";
 import Home from "../pages/Home";
@@ -63,7 +65,11 @@ export const routeList = [
         componente: <Pedidos />,
     },
     {
-        caminho: '/meu-carrinho',
-        componente: <Carrinho />,
+        caminho: '/produtos',
+        componente: <AdmProdutos />,
+    },
+    {
+        caminho: '/pedidos',
+        componente: <AdmPedidos />,
     },
 ]

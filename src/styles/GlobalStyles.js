@@ -425,6 +425,7 @@ export const Td = styled.td`
   padding: 10px;
   vertical-align: middle;
   border: 1px solid var(--color-btn);
+  text-align: center;
 
   @media (max-width: 1024px) {
     padding: 8px;

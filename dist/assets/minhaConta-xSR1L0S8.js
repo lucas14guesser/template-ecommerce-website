@@ -1,4 +1,4 @@
-import{d as n,L as t,j as r,S as a,T as e,p as d,k as s}from"./GlobalStyles-DMGlgjQW.js";import{u as c,I as m}from"./UserServices-BJ82qdOG.js";import"./index-CaXUPvmj.js";const l=n.div`
+import{j as r,r as c}from"./index-BEcKhezz.js";import{d as e,m,S as a,g as o,l as s,C as l}from"./GlobalStyles-MdkXd6BX.js";import{u as x,I as p,a as u,b as h}from"./UserServices-ezwICZXm.js";import"./index-DA7pVkDv.js";const t=e.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
@@ -10,7 +10,7 @@ import{d as n,L as t,j as r,S as a,T as e,p as d,k as s}from"./GlobalStyles-DMGl
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
-`,x=n(t)`
+`,d=e(m)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,4 +49,4 @@ import{d as n,L as t,j as r,S as a,T as e,p as d,k as s}from"./GlobalStyles-DMGl
     flex-direction: column;
     gap: 0.5rem;
   }
-`;function p(){return r.jsxs(a,{children:[c.map((i,o)=>r.jsxs(e,{children:["Boas-vindas ",i.nome]},o)),r.jsx(l,{children:m.map((i,o)=>r.jsxs(x,{to:i.link,children:[r.jsx(d,{children:i.icone}),r.jsx("p",{children:i.funcao})]},o))})]})}function j(){return r.jsxs(s,{children:[r.jsx("title",{children:"Minha Conta"}),r.jsx(e,{children:"Painel do Usuário"}),r.jsx(p,{}),r.jsx("div",{})]})}export{j as M};
+`;function j(){return r.jsxs(a,{children:[x.map((n,i)=>r.jsxs(o,{children:["Boas-vindas ",n.nome]},i)),r.jsx(t,{children:p.map((n,i)=>r.jsxs(d,{to:n.link,children:[r.jsx(s,{children:n.icone}),r.jsx("p",{children:n.funcao})]},i))})]})}function g(){return r.jsxs(a,{children:[u.map((n,i)=>r.jsxs(o,{children:["Boas-vindas ",n.nome]},i)),r.jsx(t,{children:h.map((n,i)=>r.jsxs(d,{to:n.link,children:[r.jsx(s,{children:n.icone}),r.jsx("p",{children:n.funcao})]},i))})]})}function k(){const[n,i]=c.useState("admin");return r.jsxs(l,{children:[r.jsx("title",{children:"Minha Conta"}),r.jsx(o,{children:"Painel do Usuário"}),n==="admin"?r.jsx(g,{}):r.jsx(j,{}),r.jsx("div",{})]})}export{k as M};
