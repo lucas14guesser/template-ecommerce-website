@@ -1,4 +1,4 @@
-import{d as e}from"./GlobalStyles-MdkXd6BX.js";const r=e.div`
+import{d as e}from"./GlobalStyles-BGCjQG-w.js";const r=e.div`
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,4 +1,4 @@
-import"./index-BEcKhezz.js";import{d as o}from"./GlobalStyles-MdkXd6BX.js";o.div`
+import{d as o}from"./GlobalStyles-BGCjQG-w.js";o.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;

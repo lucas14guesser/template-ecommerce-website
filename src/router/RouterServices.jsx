@@ -65,7 +65,7 @@ export const routeList = [
         componente: <Pedidos />,
     },
     {
-        caminho: '/produtos',
+        caminho: '/adprodutos',
         componente: <AdmProdutos />,
     },
     {

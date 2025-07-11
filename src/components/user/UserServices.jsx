@@ -15,7 +15,7 @@ export const InfosGridAdmin = [
     },
     {
         funcao: 'Produtos',
-        link: '/produtos',
+        link: '/adprodutos',
         icone: <FaProductHunt />
     },
     {
