@@ -65,6 +65,10 @@ export const routeList = [
         componente: <Pedidos />,
     },
     {
+        caminho: '/meu-carrinho',
+        componente: <Carrinho />,
+    },
+    {
         caminho: '/adprodutos',
         componente: <AdmProdutos />,
     },
