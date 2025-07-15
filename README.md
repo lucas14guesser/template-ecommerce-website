@@ -55,7 +55,7 @@ https://template-ecommerce-website.vercel.app/
 
 4. Replace the mock data, images, and texts with the real client content.
 
-📁 Project Structure
+## 📁 Project Structure
     📦 ecommerce-react-template
     ├── node_modules
     ├── public
