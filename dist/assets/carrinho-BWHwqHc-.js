@@ -1,4 +1,4 @@
-import{d as t,j as o,k as a,T as n}from"./GlobalStyles-DZPKHGvf.js";const i=t.div`
+import{d as t,j as o,k as a,T as n}from"./GlobalStyles-DSdOrOET.js";const i=t.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;

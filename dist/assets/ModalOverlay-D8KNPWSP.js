@@ -1,0 +1,1 @@
+import{j as o,M as s,w as t,i as e}from"./GlobalStyles-DSdOrOET.js";function l({onClose:a,children:n}){return o.jsx(s,{children:o.jsxs(t,{onClick:r=>r.stopPropagation(),children:[n,o.jsx(e,{onClick:a,children:"Fechar"})]})})}export{l as M};
