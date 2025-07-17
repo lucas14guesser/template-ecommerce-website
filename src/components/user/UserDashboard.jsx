@@ -1,17 +1,21 @@
 import React from 'react'
 import { IconesP, Subcontainer, Title } from '../../styles/GlobalStyles'
 import { FunctionsUser, GridFunctionsUser } from './UserStyles'
-import { InfosGrid, users } from './UserServices'
+import { InfosGrid } from './UserServices'
+import { useAuth } from '../context/AuthContext'
+import { handleLogout } from '../login/LoginServices'
+import { useNavigate } from 'react-router-dom'
 
 export default function UserDashboard() {
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
+
     return (
         <Subcontainer>
-            {users.map((user, index) => (
-                <Title key={index}>Boas-vindas {user.nome}</Title>
-            ))}
+            <Title>Boas-vindas {user.user.user_nome}</Title>
             <GridFunctionsUser>
                 {InfosGrid.map((info, index) => (
-                    <FunctionsUser key={index} to={info.link}>
+                    <FunctionsUser key={index} to={info.link} onClick={() => handleLogout(info, info.isLogout, logout, navigate)}>
                         <IconesP>{info.icone}</IconesP>
                         <p>{info.funcao}</p>
                     </FunctionsUser>

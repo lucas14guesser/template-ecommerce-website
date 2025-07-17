@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { BtnDefault, DivFlexColm, DivFlexRow, FormInput, Title } from '../../styles/GlobalStyles'
-import { infosUserData } from './UserServices'
 import { handleModal } from '../../services/GlobalServices'
 import UserModalContent from './UserModalContent';
 import ModalOverlay from '../modals/ModalOverlay';
+import { infosUserData } from './UserServices';
 
 export default function UserInfos() {
     const [modal, setModal] = useState(false);
+
+    const dataUser = infosUserData();
 
     return (
         <>
             <DivFlexColm>
                 <Title>Minhas Informações</Title>
-                {infosUserData.map((info, index) => (
+                {dataUser.map((info, index) => (
                     <FormInput key={index} name={info.campo} value={info.valor} disabled />
                 ))}
                 <DivFlexRow>

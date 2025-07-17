@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { postCadastro } from "../../api/PostMethods";
 
 export const inputInfosCad = (nome, setNome, email, setEmail, pass, setPass) => [
@@ -24,12 +25,12 @@ export const inputInfosCad = (nome, setNome, email, setEmail, pass, setPass) => 
     },
 ];
 
-export const handleCadastro = async (nome, email, pass, setError, navigate, e) => {
+export const handleCadastro = async (nome, email, pass, navigate, e) => {
     e.preventDefault();
 
     if (!nome || !email || !pass) {
-        setError('Todos os campos precisam ser preenchidos');
+        toast.error('Todos os campos precisam ser preenchidos');
     } else {
-        await postCadastro(nome, email, pass, navigate, setError);
+        await postCadastro(nome, email, pass, navigate);
     }
 };
