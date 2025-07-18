@@ -98,6 +98,15 @@ export const ModalC = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn .3s forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0
+    } to {
+      opacity: 1;
+    }
+  }
 `
 export const ModalContent = styled.div`
 background-color: var(--color-bg-sec);
@@ -105,6 +114,15 @@ padding: 1rem;
 border-radius: 8px;
 max-width: 75rem;
 width: 100%;
+animation: scaleUp .3s forwards;
+
+@keyframes scaleUp {
+    from {
+      transform: scale(0.8);
+    } to {
+      transform: scale(1);
+    }
+}
 `
 export const LinksCategorias = styled(Link)`
   text-decoration: none;

@@ -4,7 +4,7 @@ import { PageSegurancaDif } from '../components/segurancaEPrivadidade/SegurancaE
 export default function SegurancaEPrivacidade() {
   return (
     <div>
-        <PageSegurancaDif />
+      <PageSegurancaDif />
     </div>
   )
 }

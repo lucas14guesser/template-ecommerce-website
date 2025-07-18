@@ -15,7 +15,7 @@ export default function UserInfos() {
             <DivFlexColm>
                 <Title>Minhas Informações</Title>
                 {dataUser.map((info, index) => (
-                    <FormInput key={index} name={info.campo} value={info.valor} disabled />
+                    <FormInput key={index} placeholder={info.placeholder} name={info.campo} value={info.valor} disabled />
                 ))}
                 <DivFlexRow>
                     <BtnDefault onClick={() => handleModal(modal, setModal)}>Editar Dados</BtnDefault>

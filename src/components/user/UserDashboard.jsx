@@ -12,7 +12,7 @@ export default function UserDashboard() {
 
     return (
         <Subcontainer>
-            <Title>Boas-vindas {user.user.user_nome}</Title>
+            <Title style={{textTransform: 'none'}}>Boas-vindas, {user.user.user_nome}</Title>
             <GridFunctionsUser>
                 {InfosGrid.map((info, index) => (
                     <FunctionsUser key={index} to={info.link} onClick={() => handleLogout(info, info.isLogout, logout, navigate)}>

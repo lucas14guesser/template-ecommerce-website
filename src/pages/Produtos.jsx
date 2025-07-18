@@ -6,6 +6,7 @@ import { obterCategoriaSelecionada } from '../components/produtos/ProdutosServic
 import BuscaProdutos from '../components/produtos/BuscaProdutos'
 import { urlFormat } from '../components/home/HomeServices'
 import Favoritos from './Favoritos'
+import BtnVoltar from '../services/BtnVoltar'
 
 export default function Produtos({ paginaBusca = false, paginaFavoritos = false }) {
   const { categoria } = useParams()
@@ -24,6 +25,7 @@ export default function Produtos({ paginaBusca = false, paginaFavoritos = false 
     <>
       <title>{categoriaSelecionada?.categoria || 'Categoria'}</title>
       <Container>
+        <BtnVoltar />
         {categoriaSelecionada ? (
           <ListaProdutos
             categoria={categoriaSelecionada.categoria}

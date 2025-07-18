@@ -8,6 +8,7 @@ import FotosProduto from '../components/produtos/FotosProduto';
 import FiltrosProduto from '../components/produtos/FiltrosProduto';
 import PrecoProduto from '../components/produtos/PrecoProduto';
 import UserFuncoesProduto from '../components/produtos/UserFuncoesProduto';
+import BtnVoltar from '../services/BtnVoltar';
 
 export default function ProdutoEspecifico() {
     const { id } = useParams();
@@ -18,6 +19,7 @@ export default function ProdutoEspecifico() {
     }
     return (
         <Container>
+            <BtnVoltar />
             <title>{produto.nome}</title>
             <Title>Produto</Title>
             <ProdutoC>
