@@ -1,21 +1,15 @@
 import React from 'react'
-import { Container, DivFlexColm, Subcontainer, Title } from '../styles/GlobalStyles'
-import FormCadastroProduto from '../components/admin/FormCadastroProduto'
-import FormEditarProduto from '../components/admin/FormEditarProduto'
-import FormExcluirProduto from '../components/admin/FormExcluirProduto'
+import { Container, Subcontainer, Title } from '../styles/GlobalStyles'
 import TabelaProdutos from '../components/admin/TabelaProdutos'
+import AdminProdutosFunctions from '../components/admin/AdminProdutosFunctions'
 
 export default function AdmProdutos() {
   return (
     <Container>
       <title>Produtos</title>
       <Title>Produtos</Title>
-      <Subcontainer style={{ alignItems: 'center' }}>
-        <DivFlexColm>
-          <FormCadastroProduto />
-          <FormEditarProduto />
-          <FormExcluirProduto />
-        </DivFlexColm>
+      <Subcontainer>
+        <AdminProdutosFunctions />
         <TabelaProdutos />
       </Subcontainer>
     </Container>

@@ -1,0 +1,1 @@
+import{j as o,M as s,H as t,k as e}from"./GlobalStyles-BvPZlZNa.js";function i({onClose:a,children:n}){return o.jsx(s,{children:o.jsxs(t,{onClick:r=>r.stopPropagation(),children:[n,o.jsx(e,{onClick:a,children:"Fechar"})]})})}export{i as M};

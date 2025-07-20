@@ -1,3 +1,7 @@
+import FormCadastroProduto from "./FormCadastroProduto";
+import FormEditarProduto from "./FormEditarProduto";
+import FormExcluirProduto from "./FormExcluirProduto";
+
 export const produtosField = [
     {
         nome: 'categoria',
@@ -104,3 +108,16 @@ export const produtosRM = [
         tipo: 'text'
     },
 ]
+export const handleOpenModal = (setModal, type, setType) => {
+    setType(type);
+    setModal(true);
+}
+export const handleCloseModal = (setModal, setType) => {
+    setModal(false);
+    setType(null);
+}
+export const functionModalContent = {
+    cadastrar: <FormCadastroProduto />,
+    editar: <FormEditarProduto />,
+    excluir: <FormExcluirProduto />,
+};
