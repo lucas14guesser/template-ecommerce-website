@@ -115,6 +115,8 @@ border-radius: 8px;
 max-width: 75rem;
 width: 100%;
 animation: scaleUp .3s forwards;
+max-height: 80%;
+overflow-y: auto;
 
 @keyframes scaleUp {
     from {
@@ -288,6 +290,52 @@ export const FormInput = styled.input`
 
   @media (max-width: 480px) {
     width: 15rem;
+  }
+`
+export const InputModalWidht = styled.input`
+  width: 10rem;
+  padding: 1rem;
+  border: 1px solid var(--color-txt);
+  font-family: var(--font-txt);
+  color: var(--color-txt);
+  border-radius: 8px;
+  font-size: var(--font-txt-sz);
+  outline: none;
+  background-color: var(--color-bg-section);
+
+  @media (max-width: 1024px) {
+    width: 7rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 7rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 5rem;
+  }
+`
+export const SelectModalWidht = styled.select`
+  width: 16.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-txt);
+  font-family: var(--font-txt);
+  color: var(--color-txt);
+  border-radius: 8px;
+  font-size: var(--font-txt-sz);
+  outline: none;
+  background-color: var(--color-bg-section);
+
+  @media (max-width: 1024px) {
+    width: 15rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 10rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 10rem;
   }
 `
 export const LinkDefault = styled(Link)`

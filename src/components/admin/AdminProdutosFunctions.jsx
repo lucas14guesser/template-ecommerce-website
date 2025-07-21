@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BtnDefault, DivFlexRow } from '../../styles/GlobalStyles'
-import { functionModalContent, handleCloseModal, handleOpenModal } from './AdminServices';
+import { btnFunctionList, functionModalContent, handleCloseModal, handleOpenModal } from './AdminServices';
 import ModalOverlay from '../modals/ModalOverlay';
 
 export default function AdminProdutosFunctions() {
@@ -10,9 +10,9 @@ export default function AdminProdutosFunctions() {
     return (
         <>
             <DivFlexRow>
-                <BtnDefault onClick={() => handleOpenModal(setModal, 'cadastrar', setType)}>Cadastrar Produto</BtnDefault>
-                <BtnDefault onClick={() => handleOpenModal(setModal, 'editar', setType)}>Editar Produto</BtnDefault>
-                <BtnDefault onClick={() => handleOpenModal(setModal, 'excluir', setType)}>Excluir Produto</BtnDefault>
+                {btnFunctionList.map((btnF, index) => (
+                    <BtnDefault key={index} onClick={() => handleOpenModal(setModal, btnF.tipo, setType)}>{btnF.txt}</BtnDefault>
+                ))}
             </DivFlexRow>
             {modal && (
                 <ModalOverlay onClose={() => handleCloseModal(setModal, setType)}>

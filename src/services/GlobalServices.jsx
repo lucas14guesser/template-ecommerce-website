@@ -43,7 +43,32 @@ export const LinksCategoria = [
         link: "/produtos/acessorios"
     },
 ]
-
+export const listCategorias = [
+    {
+        nome: "Blusas",
+    },
+    {
+        nome: "Vestidos",
+    },
+    {
+        nome: "Jaquetas",
+    },
+    {
+        nome: "Calças",
+    },
+    {
+        nome: "Shorts",
+    },
+    {
+        nome: "Saias",
+    },
+    {
+        nome: "Sapatos",
+    },
+    {
+        nome: "Acessórios",
+    },
+]
 export function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
