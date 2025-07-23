@@ -1,4 +1,4 @@
-import{d,p as h,u as c,j as r,S as m,T as t,q as l,k as g}from"./GlobalStyles-CvaMPm1h.js";import{I as j,a as f}from"./UserServices-gUSe5QuU.js";import{u as a}from"./index-sOSDVVu7.js";import{a as u}from"./LoginServices-BLE719p8.js";import{B as v}from"./BtnVoltar-D9e0ujaY.js";import"./index-CVrgv8Bg.js";import"./PostMethods-BGCF69o9.js";const x=d.div`
+import{d,p as h,u as c,j as r,S as m,T as t,q as l,k as g}from"./GlobalStyles-CvaMPm1h.js";import{I as j,a as f}from"./UserServices-DlNQGnNd.js";import{u as a}from"./index-sOSDVVu7.js";import{a as u}from"./LoginServices-B94zrnIE.js";import{B as v}from"./BtnVoltar-D9e0ujaY.js";import"./index-CVrgv8Bg.js";import"./PostMethods-aMpNyQkJ.js";const x=d.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;

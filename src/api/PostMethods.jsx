@@ -9,7 +9,7 @@ export const postCadastro = async (nome, email, pass, navigate) => {
     };
 
     try {
-        const resp = await axios.post('https://2712dbcabcd1.ngrok-free.app/ecommerce/cadastro', userData);
+        const resp = await axios.post('https://87fe00a49264.ngrok-free.app/ecommerce/cadastro', userData);
         if (!resp.data.error) {
             navigate('/login');
         } else {
@@ -27,7 +27,7 @@ export const postLogin = async (email, pass, navigate, login) => {
     };
 
     try {
-        const resp = await axios.post('https://2712dbcabcd1.ngrok-free.app/ecommerce/login', userData);
+        const resp = await axios.post('https://87fe00a49264.ngrok-free.app/ecommerce/login', userData);
         if (!resp.data.error) {
             login(resp.data.result);
             navigate('/minha-conta');
@@ -44,7 +44,7 @@ export const postSignatureData = async () => {
     const timestamp = Math.floor(Date.now() / 1000);
 
     try {
-        const signatureResp = await axios.post('https://2712dbcabcd1.ngrok-free.app/ecommerce/cloudinary-signature', { timestamp, folder });
+        const signatureResp = await axios.post('https://87fe00a49264.ngrok-free.app/ecommerce/cloudinary-signature', { timestamp, folder });
 
         return { ...signatureResp.data, folder};
     } catch (error) {
@@ -71,7 +71,7 @@ export const postProduto = async (nome, preco, lancamento, categoria, foto, cor,
     }
 
     try {
-        const resp = await axios.post('https://2712dbcabcd1.ngrok-free.app/ecommerce/cad-produto', produtoData, { headers: { Authorization: `Bearer ${token}` } })
+        const resp = await axios.post('https://87fe00a49264.ngrok-free.app/ecommerce/cad-produto', produtoData, { headers: { Authorization: `Bearer ${token}` } })
         if (!resp.data.error) {
             setProduto(resp.data.result);
             toast.success('Produto cadastrado com sucesso!');
