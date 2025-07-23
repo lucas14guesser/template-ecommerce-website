@@ -51,6 +51,7 @@ export function urlFormat(nome) {
         .toLowerCase();
 }
 export function precoFormat(preco) {
-    return preco
-        .toFixed(2)
+    const numero = Number(preco);
+    if (isNaN(numero)) return 'Preço inválido';
+    return numero.toFixed(2).replace('.', ',');
 }

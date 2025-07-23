@@ -2,6 +2,8 @@ import FormCadastroProduto from "./FormCadastroProduto";
 import FormEditarProduto from "./FormEditarProduto";
 import FormExcluirProduto from "./FormExcluirProduto";
 import { postFileFotos, postProduto, postSignatureData } from "../../api/PostMethods";
+import FormOfertarProduto from "./FormOfertarProduto";
+import { toast } from "react-toastify";
 
 export const produtosField = [
     {
@@ -107,7 +109,10 @@ export const listCor = [
     { nome: 'Laranja', valor: '#FFA500' },
     { nome: 'Off White', valor: '#FAF9F6' },
     { nome: 'Caramelo', valor: '#A0522D' },
-    { nome: 'Camelo', valor: '#C19A6B' }
+    { nome: 'Camelo', valor: '#C19A6B' },
+    { nome: 'Bronze', valor: '#CD7F32' },
+    { nome: 'Prata', valor: '#C0C0C0' },
+    { nome: 'Ouro', valor: '#FFD700' },
 ]
 export const listTamanho = [
     { nome: 'PP', valor: 'pp' },
@@ -143,6 +148,7 @@ export const functionModalContent = {
     cadastrar: <FormCadastroProduto />,
     editar: <FormEditarProduto />,
     excluir: <FormExcluirProduto />,
+    ofertar: <FormOfertarProduto />,
 }
 export const btnFunctionList = [
     {
@@ -156,14 +162,18 @@ export const btnFunctionList = [
     {
         tipo: 'excluir',
         txt: 'Excluir Produto'
-    }
-
+    },
+    {
+        tipo: 'ofertar',
+        txt: 'Ofertar Produto'
+    },
 ]
 export const handleChangeCor = (novasCores, setProduto) => {
     setProduto(prev => ({ ...prev, produto_cor: novasCores }));
 }
 export const adicionarCor = (cores, setCores) => {
-    setCores([...cores, { cor: '', tamanhos: [] }]);
+    const novaCor = { cor: { nome: '', valor: '' }, tamanhos: [] };
+    setCores([...cores, novaCor]);
 }
 export const adicionarTamanho = (cores, setCores, index) => {
     const novasCores = [...cores];
@@ -172,7 +182,8 @@ export const adicionarTamanho = (cores, setCores, index) => {
 }
 export const handleCorChange = (cores, setCores, index, value) => {
     const novasCores = [...cores];
-    const corSelecionada = listCor.find(c => c.valor === value);
+    const normalizedValue = value.trim().toUpperCase();
+    const corSelecionada = listCor.find(c => c.valor.toUpperCase() === normalizedValue);
     if (corSelecionada) {
         novasCores[index].cor = corSelecionada;
     } else {
@@ -233,4 +244,7 @@ export const handleCadastroProduto = async (nome, preco, categoria, lancamento, 
         return
     }
     await postProduto(nome, preco, lancamento, categoria, foto, cor, setProduto, token);
+}
+export const filtroDeProdutos = (produtos, busca) => {
+    return produtos.filter(produto => produto.produto_nome.toLowerCase().includes(busca.toLowerCase()));
 }

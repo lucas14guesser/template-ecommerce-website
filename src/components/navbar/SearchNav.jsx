@@ -9,9 +9,9 @@ export default function SearchNav() {
   const navigate = useNavigate();
 
   return (
-        <SearchWrapper onSubmit={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}>
-          <SearchIpt type="text" placeholder='Buscar' value={busca} onChange={(e) => setBusca(e.target.value)} />
-          <BtnSearch type='submit' onClick={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}><FaSearch /></BtnSearch>
-        </SearchWrapper>
+    <SearchWrapper onSubmit={(e) => handleSearchSubmit(e, busca, navigate, '/buscar?query=')}>
+      <SearchIpt type="text" placeholder='Buscar' value={busca} onChange={(e) => setBusca(e.target.value)} />
+      <BtnSearch type='submit'><FaSearch /></BtnSearch>
+    </SearchWrapper>
   )
 }

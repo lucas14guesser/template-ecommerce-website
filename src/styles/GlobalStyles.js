@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-hover: #8A8B6F;
     --color-somb: #8A8B6F;
     --color-btn: #A63F2C;
+    --color-black: #000000;
 
     --trans-time: .7s;
 
@@ -293,7 +294,7 @@ export const FormInput = styled.input`
   }
 `
 export const InputModalWidht = styled.input`
-  width: 10rem;
+  width: 3rem;
   padding: 1rem;
   border: 1px solid var(--color-txt);
   font-family: var(--font-txt);
@@ -302,21 +303,9 @@ export const InputModalWidht = styled.input`
   font-size: var(--font-txt-sz);
   outline: none;
   background-color: var(--color-bg-section);
-
-  @media (max-width: 1024px) {
-    width: 7rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 7rem;
-  }
-
-  @media (max-width: 480px) {
-    width: 5rem;
-  }
 `
 export const SelectModalWidht = styled.select`
-  width: 16.5rem;
+  width: 42rem;
   padding: 1rem;
   border: 1px solid var(--color-txt);
   font-family: var(--font-txt);
@@ -327,15 +316,15 @@ export const SelectModalWidht = styled.select`
   background-color: var(--color-bg-section);
 
   @media (max-width: 1024px) {
-    width: 15rem;
+    width: 27rem;
   }
 
   @media (max-width: 768px) {
-    width: 10rem;
+    width: 22rem;
   }
 
   @media (max-width: 480px) {
-    width: 10rem;
+    width: 17rem;
   }
 `
 export const LinkDefault = styled(Link)`
@@ -507,4 +496,74 @@ export const Td = styled.td`
     padding: 5px;
     font-size: 13px;
   }
+`
+export const ListaWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+`
+export const CardProduto = styled.div`
+  background-color: var(--color-bg-section);
+  border: 0.0625rem solid var(--color-btn);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  width: 18.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+`
+export const ImagemProduto = styled.img`
+  width: 100%;
+  height: 12.5rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  border: 0.0625rem solid var(--color-btn);
+`
+export const NomeProduto = styled.h3`
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0;
+`
+export const Categoria = styled.p`
+  font-size: 0.95rem;
+  margin: 0;
+`
+export const Preco = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: ${props => (props.$emOferta ? 'red' : 'var(--color-text)')};
+`
+export const CoresWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+`
+export const CorItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`
+export const CirculoCor = styled.div`
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: ${props => props.$cor};
+  border: 1px solid var(--color-black);
+`
+export const ListaTamanhos = styled.ul`
+  padding-left: 1.25rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
 `
