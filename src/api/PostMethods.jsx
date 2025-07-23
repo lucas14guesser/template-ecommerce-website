@@ -46,7 +46,7 @@ export const postSignatureData = async () => {
     try {
         const signatureResp = await axios.post('http://localhost:3000/ecommerce/cloudinary-signature', { timestamp, folder });
 
-        return { ...signatureResp.data, folder};
+        return { ...signatureResp.data, folder };
     } catch (error) {
         console.error('Erro ao obter assinatura do servidor', error);
         return null;
@@ -81,5 +81,20 @@ export const postProduto = async (nome, preco, lancamento, categoria, foto, cor,
     } catch (error) {
         toast.error('Erro na requisição de cadastro do produto:' + ' ' + error.message);
         throw new Error('Erro na requisição de cadastro do produto: ' + error.message);
+    }
+}
+export const postOfferProduto = async (id, novoPreco, token) => {
+    const offerData = { oferta_ativo: true, oferta_novo_preco: novoPreco, produto_id: id }
+
+    try {
+        const resp = await axios.post(`http://localhost:3000/ecommerce/offer-produto/${id}`, offerData, { headers: { Authorization: `Bearer ${token}` } });
+        if (!resp.data.error) {
+            toast.success('Produto ofertado com sucesso!');
+        } else {
+            toast.error(resp.data.error);
+        }
+    } catch (error) {
+        toast.error('Erro na requisição de ofertar o produto:' + ' ' + error.message);
+        throw new Error('Erro na requisição de ofertar o produto: ' + error.message);
     }
 }

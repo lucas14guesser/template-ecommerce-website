@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -499,6 +499,7 @@ export const Td = styled.td`
 `
 export const ListaWrapper = styled.div`
   width: 100%;
+  min-height: 75vh;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -567,3 +568,61 @@ export const ListaTamanhos = styled.ul`
   margin: 0.25rem 0 0;
   font-size: 0.9rem;
 `
+export const WrapperPaginacao = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+`
+export const BotaoPaginacao = styled.button`
+  width: 13rem;
+  padding: 1rem;
+  border: 1px solid var(--color-bg-sec);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-bg-section);
+  background-color: var(--color-btn);
+  transition: var(--trans-time);
+  font-size: var(--font-text-sz);
+
+  &:hover:not(:disabled) {
+      background-color: var(--color-hover);
+  }
+
+  &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    width: 11rem;
+    padding: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 10rem;
+    padding: 0.8rem;
+  }
+`
+const spin = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+`;
+
+export const Spinner = styled.div`
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ccc;
+  border-top-color: var(--color-btn);
+  border-radius: 50%;
+  animation: ${spin} 1s linear infinite;
+`;

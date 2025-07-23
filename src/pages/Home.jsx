@@ -1,30 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from '../styles/GlobalStyles';
 import CarouselCategoria from '../components/CarouselCategoria';
-import { categoriasProdutos, lancamentos, ofertas } from '../components/produtos/ProdutosServices';
+import { categoriasUnicas, lancamentos, ofertas, todosProdutos } from '../components/produtos/ProdutosServices';
+import { getAllProdutos } from '../api/GetMethods';
+import Loading from '../services/Loading';
 
 export default function Home() {
+  const [produtos, setProdutos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllProdutos(setProdutos).finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <Loading />
+  
+  const categoria = categoriasUnicas(produtos);
+
   return (
     <Container>
       <title>Início</title>
 
-      {ofertas.length > 0 && (
+      {ofertas(produtos).length > 0 && (
         <CarouselCategoria
           categoria="Ofertas"
-          produtos={ofertas}
+          produtos={ofertas(produtos)}
         />
       )}
-      {lancamentos.length > 0 && (
+      {lancamentos(produtos).length > 0 && (
         <CarouselCategoria
           categoria="Lançamentos"
-          produtos={lancamentos}
+          produtos={lancamentos(produtos)}
         />
       )}
-      {categoriasProdutos.map((categoria, index) => (
+      {categoria.map((nomeCategoria, index) => (
         <CarouselCategoria
           key={index}
-          categoria={categoria.categoria}
-          produtos={categoria.produtos}
+          categoria={nomeCategoria}
+          produtos={todosProdutos(produtos, nomeCategoria)}
         />
       ))}
       <div></div>

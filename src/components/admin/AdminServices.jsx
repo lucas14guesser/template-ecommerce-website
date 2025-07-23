@@ -1,9 +1,10 @@
 import FormCadastroProduto from "./FormCadastroProduto";
 import FormEditarProduto from "./FormEditarProduto";
 import FormExcluirProduto from "./FormExcluirProduto";
-import { postFileFotos, postProduto, postSignatureData } from "../../api/PostMethods";
+import { postFileFotos, postOfferProduto, postProduto, postSignatureData } from "../../api/PostMethods";
 import FormOfertarProduto from "./FormOfertarProduto";
 import { toast } from "react-toastify";
+import { deleteProduto } from "../../api/DeleteMethods";
 
 export const produtosField = [
     {
@@ -86,6 +87,24 @@ export const produtosRM = [
         tipo: 'text'
     },
 ]
+export const produtosOffer = (id, setId, preco, setPreco) => {
+    return [
+        {
+            nome: 'produto_id',
+            placeholder: 'ID do Produto',
+            tipo: 'text',
+            valor: id,
+            change: setId,
+        },
+        {
+            nome: 'oferta_novo_preco',
+            placeholder: 'Novo Preço do Produto',
+            tipo: 'text',
+            valor: preco,
+            change: setPreco,
+        },
+    ]
+}
 export const listCor = [
     { nome: 'Branco', valor: '#FFFFFF' },
     { nome: 'Preto', valor: '#000000' },
@@ -252,12 +271,43 @@ export const filtroDeProdutos = (produtos, busca) => {
     const includes = removerAcentos(busca.toLowerCase());
 
     return produtos.filter(produto => {
+        const id = removerAcentos(String(produto.produto_id).toLowerCase());
         const nome = removerAcentos(produto.produto_nome.toLowerCase());
         const categoria = removerAcentos(produto.categoria_nome.toLowerCase());
 
-        return nome.includes(includes) || categoria.includes(includes);
+        return id.includes(includes) || nome.includes(includes) || categoria.includes(includes);
     });
 }
 const removerAcentos = (txt) => {
     return txt.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+export const functionPaginacao = (paginaAtual, produtosFiltrados) => {
+    const produtosPorPagina = 4;
+
+    const indiceInicial = (paginaAtual - 1) * produtosPorPagina;
+    const indiceFinal = indiceInicial + produtosPorPagina;
+    const produtosPaginados = produtosFiltrados.slice(indiceInicial, indiceFinal);
+    const totalPaginas = Math.ceil(produtosFiltrados.length / produtosPorPagina);
+
+    return { produtosPaginados, totalPaginas }
+}
+export const handleExcluirProduto = async (e, produto_id, token) => {
+    e.preventDefault();
+
+    if (!produto_id) {
+        toast.error('ID do produto precisa ser preenchido');
+        return;
+    }
+
+    await deleteProduto(produto_id, token);
+}
+export const handleOfferProduto = async (e, produto_id, oferta_novo_preco, token) => {
+    e.preventDefault()
+
+    if(!produto_id || !oferta_novo_preco) {
+        toast.error('Todos os campos precisam ser preenchidos');
+        return;
+    }
+
+    await postOfferProduto(produto_id, oferta_novo_preco, token);
 }

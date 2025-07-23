@@ -4,6 +4,8 @@ import { ContainerImgsCarousel, ImgsCarousel, Title, FontPreco, NewPrice, BtnDef
 import { precoFormat, settingsCarousel } from './home/HomeServices';
 
 export default function CarouselCategoria({ categoria, produtos }) {
+    if (!produtos || produtos.length === 0) return null;
+
     return (
         <div>
             <Title>{categoria}</Title>
@@ -11,18 +13,18 @@ export default function CarouselCategoria({ categoria, produtos }) {
                 {produtos.map((produto, index) => (
                     <div key={index}>
                         <ContainerImgsCarousel>
-                            <LinkProd to={`/produtos/produto/${(produto.id)}`}>
-                                <ImgsCarousel src={produto.fotos[0].foto} alt={produto.nome} />
-                                <p>{produto.nome}</p>
-                                {produto.ofertas && produto.ofertas[0]?.oferta ? (
+                            <LinkProd to={`/produtos/produto/${(produto.produto_id)}`}>
+                                <ImgsCarousel src={produto.fotos[0].foto_produto_url} alt={produto.produto_nome} />
+                                <p>{produto.produto_nome}</p>
+                                {produto.oferta && produto.oferta.oferta_ativo ? (
                                     <NewPrice>
                                         <FontPreco style={{ textDecoration: 'line-through', color: 'gray' }}>
-                                            R${precoFormat(produto.preco)}
+                                            R${precoFormat(produto.produto_preco)}
                                         </FontPreco>
-                                        <FontPreco>R${precoFormat(produto.ofertas[0].novoPreco)}</FontPreco>
+                                        <FontPreco>R${precoFormat(produto.oferta.oferta_novo_preco)}</FontPreco>
                                     </NewPrice>
                                 ) : (
-                                    <FontPreco>R${precoFormat(produto.preco)}</FontPreco>
+                                    <FontPreco>R${precoFormat(produto.produto_preco)}</FontPreco>
                                 )}
                             </LinkProd>
                             <BtnDefault>Adicionar ao carrinho</BtnDefault>

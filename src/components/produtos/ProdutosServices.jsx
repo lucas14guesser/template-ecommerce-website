@@ -886,32 +886,45 @@ export const categoriasProdutos = [
         ]
     },
 ]
-export const todosProdutos = categoriasProdutos.flatMap(cat => cat.produtos);
-export const lancamentos = todosProdutos.filter(p => p.lancamento);
-export const ofertas = todosProdutos.filter(p => p.ofertas?.[0]?.oferta);
-export const favoritos = todosProdutos.filter(p => p.favorito);
+export const todosProdutos = (produtos, categoria) => {
+  return produtos.filter(produto => produto.categoria_nome === categoria);
+}
+export const lancamentos = (produtos) => {
+  return produtos.filter(produto => produto.produto_lancamento === true);
+}
+export const ofertas = (produtos) => {
+  return produtos.filter(produto => produto.oferta?.oferta_ativo === true);
+}
+export const favoritos = (produtos) => {
+  return produtos.filter(produto => produto.favorito === true);
+}
+export const categoriasUnicas = (produtos) => {
+  return [...new Set(produtos.map(produto => produto.categoria_nome).filter(Boolean))];
+}
+export function obterCategoriaSelecionada(categoriaURL, produtos) {
+    if (!produtos || produtos.length === 0) return null;
 
-export function obterCategoriaSelecionada(categoriaURL) {
     if (categoriaURL === 'lancamentos') {
         return {
             categoria: 'Lançamentos',
-            produtos: lancamentos,
+            produtos: lancamentos(produtos) || [],
         };
     }
 
     if (categoriaURL === 'ofertas') {
         return {
             categoria: 'Ofertas',
-            produtos: ofertas,
+            produtos: ofertas(produtos) || [],
         };
     }
 
-    const encontrada = categoriasProdutos.find((cat) => urlFormat(cat.categoria) === categoriaURL);
+    const categoriasUnicasArray = categoriasUnicas(produtos);
+    const nomeCategoria = categoriasUnicasArray.find(nome => urlFormat(nome) === categoriaURL);
 
-    if (encontrada) {
+    if (nomeCategoria) {
         return {
-            categoria: encontrada.categoria,
-            produtos: encontrada.produtos,
+            categoria: nomeCategoria,
+            produtos: todosProdutos(produtos, nomeCategoria) || [],
         };
     }
 
@@ -920,9 +933,9 @@ export function obterCategoriaSelecionada(categoriaURL) {
 export function useQuery() {
     return new URLSearchParams(useLocation().search)
 }
-export function resultadosBusca(termoBusca) {
+export function resultadosBusca(termoBusca, produtos) {
     if (!termoBusca) return []
-    return todosProdutos.filter(p => p.nome.toLowerCase().includes(termoBusca.toLowerCase()))
+    return produtos.filter(produto => produto.produto_nome.toLowerCase().includes(termoBusca.toLowerCase()))
 }
 export function findProdutoPorId(idProduto) {
     const idNum = Number(idProduto);

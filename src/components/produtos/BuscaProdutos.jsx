@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { resultadosBusca, useQuery } from './ProdutosServices'
 import { Container } from '../../styles/GlobalStyles'
 import ListaProdutos from './ListaProdutos'
 import BtnVoltar from '../../services/BtnVoltar'
+import { getAllProdutos } from '../../api/GetMethods'
+import Loading from '../../services/Loading'
 
 export default function BuscaProdutos() {
-  const query = useQuery()
+  const [produtos, setProdutos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const query = useQuery();
+
+  useEffect(() => {
+    getAllProdutos(setProdutos).finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <Loading />
+
   const termoBusca = query.get('query')?.toLowerCase() || ''
-  const results = resultadosBusca(termoBusca);
+  const results = resultadosBusca(termoBusca, produtos);
 
   return (
     <Container>
