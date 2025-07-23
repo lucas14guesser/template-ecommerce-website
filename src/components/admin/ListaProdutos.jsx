@@ -11,7 +11,7 @@ export default function ListaProdutos({ busca }) {
         getAllProdutos(setProdutos);
     }, []);
 
-    const produtosFiltrados = filtroDeProdutos(produtos, busca)
+    const produtosFiltrados = filtroDeProdutos(produtos || [], busca)
 
     return (
         <ListaWrapper>

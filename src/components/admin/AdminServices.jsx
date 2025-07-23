@@ -246,5 +246,6 @@ export const handleCadastroProduto = async (nome, preco, categoria, lancamento, 
     await postProduto(nome, preco, lancamento, categoria, foto, cor, setProduto, token);
 }
 export const filtroDeProdutos = (produtos, busca) => {
+    if (!Array.isArray(produtos)) return [];
     return produtos.filter(produto => produto.produto_nome.toLowerCase().includes(busca.toLowerCase()));
 }
