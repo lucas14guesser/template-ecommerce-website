@@ -1,4 +1,4 @@
-import{d as t,j as o,k as a,T as n}from"./GlobalStyles-CvaMPm1h.js";import{B as i}from"./BtnVoltar-D9e0ujaY.js";const d=t.div`
+import{d as t,j as o,k as a,T as n}from"./GlobalStyles-PJ1hvAss.js";import{B as i}from"./BtnVoltar-BX6StUgI.js";const d=t.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;

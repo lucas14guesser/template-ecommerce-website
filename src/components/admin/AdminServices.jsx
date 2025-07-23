@@ -247,8 +247,17 @@ export const handleCadastroProduto = async (nome, preco, categoria, lancamento, 
 }
 export const filtroDeProdutos = (produtos, busca) => {
     if (!Array.isArray(produtos)) return [];
-
     if (!busca || typeof busca !== 'string') return produtos;
 
-    return produtos.filter(produto => produto.produto_nome.toLowerCase().includes(busca.toLowerCase()));
+    const includes = removerAcentos(busca.toLowerCase());
+
+    return produtos.filter(produto => {
+        const nome = removerAcentos(produto.produto_nome.toLowerCase());
+        const categoria = removerAcentos(produto.categoria_nome.toLowerCase());
+
+        return nome.includes(includes) || categoria.includes(includes);
+    });
+}
+const removerAcentos = (txt) => {
+    return txt.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }

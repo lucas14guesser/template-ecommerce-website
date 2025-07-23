@@ -10,7 +10,7 @@ export const PutUserData = async (nomeUser, enderecoUser, telefoneUser, cpfUser,
     }
 
     try {
-        const resp = await axios.put(`https://87fe00a49264.ngrok-free.app/ecommerce/user/${user_id}`, userData, {headers: {Authorization: `Bearer ${token}`}});
+        const resp = await axios.put(`http://localhost:3000/ecommerce/user/${user_id}`, userData, {headers: {Authorization: `Bearer ${token}`}});
         if (!resp.data.error) {
             toast.success('Seus dados foram atualizados com sucesso!');
         } else {
