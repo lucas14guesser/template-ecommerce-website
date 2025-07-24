@@ -22,6 +22,7 @@ export default defineConfig({
         carrinho: resolve(__dirname, './src/pages/Carrinho.jsx'),
         admPedidos: resolve(__dirname, './src/pages/AdmPedidos.jsx'),
         admProdutos: resolve(__dirname, './src/pages/AdmProdutos.jsx'),
+        notFound: resolve(__dirname, './src/pages/NotFound.jsx'),
       }
     }
   }

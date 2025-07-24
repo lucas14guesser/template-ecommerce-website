@@ -4,7 +4,8 @@ import FormExcluirProduto from "./FormExcluirProduto";
 import { postFileFotos, postOfferProduto, postProduto, postSignatureData } from "../../api/PostMethods";
 import FormOfertarProduto from "./FormOfertarProduto";
 import { toast } from "react-toastify";
-import { deleteProduto } from "../../api/DeleteMethods";
+import { deleteProduto, retirarOferta } from "../../api/DeleteMethods";
+import FormRetirarOferta from "./FormRetirarOferta";
 
 export const produtosField = [
     {
@@ -35,49 +36,24 @@ export const produtosEdit = [
         tipo: 'text'
     },
     {
-        nome: 'categoria',
-        placeholder: 'Categoria do Produto',
-        tipo: 'text'
-    },
-    {
-        nome: 'nome',
+        nome: 'produto_nome',
         placeholder: 'Nome do Produto',
         tipo: 'text'
     },
     {
-        nome: 'foto',
-        placeholder: 'Foto do Produto',
-        tipo: 'file'
-    },
-    {
-        nome: 'preco',
+        nome: 'produto_preco',
         placeholder: 'Preço do Produto',
         tipo: 'text'
     },
     {
-        nome: 'cor',
-        placeholder: 'Cor do Produto',
-        tipo: 'text'
-    },
-    {
-        nome: 'tamanho',
-        placeholder: 'Tamanho do Produto',
-        tipo: 'text'
-    },
-    {
-        nome: 'quantidade',
-        placeholder: 'Quantidade do Produto',
-        tipo: 'text'
-    },
-    {
-        nome: 'lancamento',
-        placeholder: 'É Lançamento?',
+        nome: 'produto_lancamento',
+        placeholder: 'O produto cadastrado é lançamento?',
         tipo: 'checkbox'
     },
     {
-        nome: 'oferta',
-        placeholder: 'É Oferta?',
-        tipo: 'checkbox'
+        nome: 'produto_foto',
+        placeholder: 'Foto do Produto',
+        tipo: 'file'
     },
 ]
 export const produtosRM = [
@@ -168,6 +144,7 @@ export const functionModalContent = {
     editar: <FormEditarProduto />,
     excluir: <FormExcluirProduto />,
     ofertar: <FormOfertarProduto />,
+    retirar_oferta: <FormRetirarOferta />,
 }
 export const btnFunctionList = [
     {
@@ -185,6 +162,10 @@ export const btnFunctionList = [
     {
         tipo: 'ofertar',
         txt: 'Ofertar Produto'
+    },
+    {
+        tipo: 'retirar_oferta',
+        txt: 'Retirar Oferta'
     },
 ]
 export const handleChangeCor = (novasCores, setProduto) => {
@@ -310,4 +291,14 @@ export const handleOfferProduto = async (e, produto_id, oferta_novo_preco, token
     }
 
     await postOfferProduto(produto_id, oferta_novo_preco, token);
+}
+export const handleRetirarOferta = async (e, produto_id, token) => {
+    e.preventDefault();
+
+    if (!produto_id) {
+        toast.error('ID do produto precisa ser preenchido');
+        return;
+    }
+
+    await retirarOferta(produto_id, token);
 }

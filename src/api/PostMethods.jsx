@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import http from "./GlobalMethod";
 
 export const postCadastro = async (nome, email, pass, navigate) => {
     const userData = {
@@ -9,7 +10,7 @@ export const postCadastro = async (nome, email, pass, navigate) => {
     };
 
     try {
-        const resp = await axios.post('http://localhost:3000/ecommerce/cadastro', userData);
+        const resp = await http.post('/cadastro', userData);
         if (!resp.data.error) {
             navigate('/login');
         } else {
@@ -27,7 +28,7 @@ export const postLogin = async (email, pass, navigate, login) => {
     };
 
     try {
-        const resp = await axios.post('http://localhost:3000/ecommerce/login', userData);
+        const resp = await http.post('/login', userData);
         if (!resp.data.error) {
             login(resp.data.result);
             navigate('/minha-conta');
@@ -44,7 +45,7 @@ export const postSignatureData = async () => {
     const timestamp = Math.floor(Date.now() / 1000);
 
     try {
-        const signatureResp = await axios.post('http://localhost:3000/ecommerce/cloudinary-signature', { timestamp, folder });
+        const signatureResp = await http.post('/cloudinary-signature', { timestamp, folder });
 
         return { ...signatureResp.data, folder };
     } catch (error) {
@@ -71,7 +72,7 @@ export const postProduto = async (nome, preco, lancamento, categoria, foto, cor,
     }
 
     try {
-        const resp = await axios.post('http://localhost:3000/ecommerce/cad-produto', produtoData, { headers: { Authorization: `Bearer ${token}` } })
+        const resp = await http.post('/cad-produto', produtoData, { headers: { Authorization: `Bearer ${token}` } })
         if (!resp.data.error) {
             setProduto(resp.data.result);
             toast.success('Produto cadastrado com sucesso!');
@@ -87,7 +88,7 @@ export const postOfferProduto = async (id, novoPreco, token) => {
     const offerData = { oferta_ativo: true, oferta_novo_preco: novoPreco, produto_id: id }
 
     try {
-        const resp = await axios.post(`http://localhost:3000/ecommerce/offer-produto/${id}`, offerData, { headers: { Authorization: `Bearer ${token}` } });
+        const resp = await http.post(`/offer-produto/${id}`, offerData, { headers: { Authorization: `Bearer ${token}` } });
         if (!resp.data.error) {
             toast.success('Produto ofertado com sucesso!');
         } else {

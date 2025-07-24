@@ -127,6 +127,10 @@ overflow-y: auto;
     }
 }
 `
+export const ImageBackground = styled.img`
+  width: 40rem;
+  height: 40rem;
+`
 export const LinksCategorias = styled(Link)`
   text-decoration: none;
   color: var(--color-txt);
@@ -609,15 +613,13 @@ const spin = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
-
+`
 export const LoaderWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60vh;
-`;
-
+`
 export const Spinner = styled.div`
   width: 48px;
   height: 48px;
@@ -625,4 +627,4 @@ export const Spinner = styled.div`
   border-top-color: var(--color-btn);
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;
-`;
+`

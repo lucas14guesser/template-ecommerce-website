@@ -5,6 +5,7 @@ import Carrinho from "../pages/Carrinho";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MinhaConta from "../pages/MinhaConta";
+import NotFound from "../pages/NotFound";
 import Pedidos from "../pages/Pedidos";
 import ProdutoEspecifico from "../pages/ProdutoEspecifico";
 import Produtos from "../pages/Produtos";
@@ -15,6 +16,11 @@ export const routeList = [
     {
         caminho: '/',
         componente: <Home />,
+        isPrivate: false,
+    },
+    {
+        caminho: '/*',
+        componente: <NotFound />,
         isPrivate: false,
     },
     {

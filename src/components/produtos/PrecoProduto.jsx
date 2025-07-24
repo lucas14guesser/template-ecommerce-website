@@ -1,25 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { InfosProd } from './ProdutosStyles';
 import { FontPreco, NewPrice } from '../../styles/GlobalStyles';
 import { precoFormat } from '../home/HomeServices';
 import { useParams } from 'react-router-dom';
-import { findProdutoPorId } from './ProdutosServices';
+import { getProdutoById } from '../../api/GetMethods';
+import NotFound from '../../pages/NotFound';
+import Loading from '../../services/Loading';
 
 export default function PrecoProduto() {
     const { id } = useParams();
-    const produto = findProdutoPorId(id);
+    const [produto, setProduto] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getProdutoById(id, setProduto).finally(() => setLoading(false));
+    }, [id]);
+
+    if (loading) return <Loading />
+
+    if (!produto) return <NotFound />
 
     return (
         <InfosProd>
-            {produto.ofertas && produto.ofertas[0]?.oferta ? (
+            {produto.oferta?.oferta_ativo ? (
                 <NewPrice>
                     <FontPreco style={{ textDecoration: 'line-through', color: 'gray' }}>
-                        R${precoFormat(produto.preco)}
+                        R${precoFormat(produto.produto_preco)}
                     </FontPreco>
-                    <FontPreco>R${precoFormat(produto.ofertas[0].novoPreco)}</FontPreco>
+                    <FontPreco>R${precoFormat(produto.oferta?.oferta_novo_preco)}</FontPreco>
                 </NewPrice>
             ) : (
-                <FontPreco>R${precoFormat(produto.preco)}</FontPreco>
+                <FontPreco>R${precoFormat(produto.produto_preco)}</FontPreco>
             )}
         </InfosProd>
     )

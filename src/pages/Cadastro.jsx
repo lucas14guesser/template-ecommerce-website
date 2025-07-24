@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Title } from '../styles/GlobalStyles'
 import CadastroForm from '../components/cadastro/CadastroForm'
 import { useAuth } from '../components/context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import BtnVoltar from '../services/BtnVoltar';
+import Loading from '../services/Loading';
 
 export default function Cadastro() {
   const { user } = useAuth();
