@@ -26,23 +26,23 @@ export const ProdutosC = styled.div`
   }
 `
 export const ProdutoImg = styled.img`
-  width: 10rem;
-  height: 10rem;
-  transition: var(--trans-time);
-  border: 1px solid var(--color-txt);
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
 
-  &:hover {
-    transform: scale(1.2);
+  @media (max-width: 1024px) {
+    width: 20rem;
+    height: 20rem;
   }
 
   @media (max-width: 768px) {
-    width: 8rem;
-    height: 8rem;
+    width: 15rem;
+    height: 15rem;
   }
 
   @media (max-width: 480px) {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 10rem;
   }
 `
 export const ProdutoC = styled.div`
@@ -51,12 +51,12 @@ export const ProdutoC = styled.div`
   padding: 2.5rem;
   background-color: var(--color-bg-sec);
 
-  @media (max-width: 768px) {
-    padding: 2rem;
+    @media (max-width: 768) {
+    padding: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    padding: 1.5rem;
+    @media (max-width: 480px) {
+    padding: 1rem;
   }
 `
 export const InfosProd = styled.div`
@@ -73,11 +73,12 @@ export const ProdutoS = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
   }
 `
@@ -108,14 +109,10 @@ export const ImgPC = styled.div`
 export const FilterList = styled.ul`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: .5rem;
   list-style-type: none;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media (max-width: 480px) {
-    gap: 0.5rem;
-  }
 `
 export const BtnFilter = styled.button`
   width: 2rem;
@@ -125,7 +122,7 @@ export const BtnFilter = styled.button`
   cursor: pointer;
   transition: var(--trans-time);
 
-  &:hover {
+  &:focus {
     border: 1px solid var(--color-txt);
   }
 
@@ -137,5 +134,17 @@ export const BtnFilter = styled.button`
   @media (max-width: 480px) {
     width: 1.5rem;
     height: 1.5rem;
+  }
+`
+export const ProdutoSpecC = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    align-items: center;
+    text-align: center;
   }
 `

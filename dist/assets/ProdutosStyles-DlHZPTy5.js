@@ -1,4 +1,4 @@
-import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
+import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,39 +22,39 @@ import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
     gap: 1.5rem;
     padding: 1.5rem;
   }
-`,t=e.img`
-  width: 10rem;
-  height: 10rem;
-  transition: var(--trans-time);
-  border: 1px solid var(--color-txt);
+`,r=e.img`
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
 
-  &:hover {
-    transform: scale(1.2);
+  @media (max-width: 1024px) {
+    width: 20rem;
+    height: 20rem;
   }
 
   @media (max-width: 768px) {
-    width: 8rem;
-    height: 8rem;
+    width: 15rem;
+    height: 15rem;
   }
 
   @media (max-width: 480px) {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 10rem;
   }
-`,a=e.div`
+`,d=e.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
   background-color: var(--color-bg-sec);
 
-  @media (max-width: 768px) {
-    padding: 2rem;
-  }
-
-  @media (max-width: 480px) {
+    @media (max-width: 768) {
     padding: 1.5rem;
   }
-`,d=e.div`
+
+    @media (max-width: 480px) {
+    padding: 1rem;
+  }
+`,a=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,14 +67,15 @@ import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
   }
-`,o=e.div`
+`;e.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -97,18 +98,14 @@ import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
     padding: 0.5rem;
     gap: 1rem;
   }
-`,n=e.ul`
+`;const o=e.ul`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: .5rem;
   list-style-type: none;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media (max-width: 480px) {
-    gap: 0.5rem;
-  }
-`,p=e.button`
+`,n=e.button`
   width: 2rem;
   height: 2rem;
   border: none;
@@ -116,7 +113,7 @@ import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
   cursor: pointer;
   transition: var(--trans-time);
 
-  &:hover {
+  &:focus {
     border: 1px solid var(--color-txt);
   }
 
@@ -129,4 +126,15 @@ import{d as e}from"./GlobalStyles-TciS0uQl.js";const r=e.div`
     width: 1.5rem;
     height: 1.5rem;
   }
-`;export{p as B,n as F,d as I,t as P,o as a,a as b,m as c,r as d};
+`,x=e.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    align-items: center;
+    text-align: center;
+  }
+`;export{n as B,o as F,a as I,r as P,d as a,m as b,x as c,t as d};

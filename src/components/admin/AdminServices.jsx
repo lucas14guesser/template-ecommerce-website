@@ -6,6 +6,7 @@ import FormOfertarProduto from "./FormOfertarProduto";
 import { toast } from "react-toastify";
 import { deleteProduto, retirarOferta } from "../../api/DeleteMethods";
 import FormRetirarOferta from "./FormRetirarOferta";
+import { putProduto } from "../../api/PutMethods";
 
 export const produtosField = [
     {
@@ -31,7 +32,7 @@ export const produtosField = [
 ]
 export const produtosEdit = [
     {
-        nome: 'id',
+        nome: 'produto_id',
         placeholder: 'ID do Produto',
         tipo: 'text'
     },
@@ -302,3 +303,13 @@ export const handleRetirarOferta = async (e, produto_id, token) => {
 
     await retirarOferta(produto_id, token);
 }
+export const handleEdicaoProduto = async (id, nome, preco, lancamento, categoria, foto, cor, e, setProduto, token) => {
+  e.preventDefault();
+
+  if (!id || !nome || !preco || !categoria) {
+    toast.error('ID, nome, preço e categoria são obrigatórios.');
+    return;
+  }
+
+  await putProduto(id, nome, preco, lancamento, categoria, foto, cor, setProduto, token);
+};

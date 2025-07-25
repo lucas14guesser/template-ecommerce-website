@@ -19,13 +19,9 @@ export default function FotosProduto() {
     if (!produto) return <NotFound />
 
     return (
-        <InfosProd>
-            <ImgPC>
-                <ProdutoImg
-                    src={produto.fotos?.[0]?.foto_produto_url}
-                    alt={produto.produto_nome}
-                />
-            </ImgPC>
-        </InfosProd>
+        <ProdutoImg
+            src={produto.fotos?.[0]?.foto_produto_url}
+            alt={produto.produto_nome}
+        />
     )
 }

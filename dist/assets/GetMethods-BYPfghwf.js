@@ -1,0 +1,1 @@
+import{h as a}from"./GlobalMethod-CF9y8IGC.js";const s=async t=>{const r=await a.get("/produtos");r.data.error?console.error(r.data.error):t(r.data.result)},d=async(t,r)=>{const o=await a.get(`/produto/${t}`);o.data.error?console.error(o.data.error):r(o.data.result)};export{d as a,s as g};

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container, Title } from '../styles/GlobalStyles';
-import { ProdutoC, ProdutoS } from '../components/produtos/ProdutosStyles';
+import { ProdutoC, ProdutoS, ProdutoSpecC } from '../components/produtos/ProdutosStyles';
 import FotosProduto from '../components/produtos/FotosProduto';
 import FiltrosProduto from '../components/produtos/FiltrosProduto';
 import PrecoProduto from '../components/produtos/PrecoProduto';
@@ -30,16 +30,20 @@ export default function ProdutoEspecifico() {
             <title>{produto.produto_nome}</title>
             <Title>Produto</Title>
             <ProdutoC>
-                <Title>{produto.produto_nome}</Title>
                 <ProdutoS>
                     <FotosProduto />
-                    <FiltrosProduto />
-                </ProdutoS>
-                <ProdutoS>
-                    <PrecoProduto />
-                    <UserFuncoesProduto />
+                    <ProdutoSpecC>
+                        <Title style={{ textAlign: 'start' }}>{produto.produto_nome}</Title>
+                        <PrecoProduto />
+                        <ProdutoSpecC style={{gap: '0'}}>
+                            <p>Cores</p>
+                            <FiltrosProduto />
+                        </ProdutoSpecC>
+                        <UserFuncoesProduto />
+                    </ProdutoSpecC>
                 </ProdutoS>
             </ProdutoC>
+            <p>AVALIAÇÕES</p>
         </Container>
     )
 }
