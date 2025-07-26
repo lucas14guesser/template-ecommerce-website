@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { handleTamanhos } from './ProdutosServices';
-import { BtnFilter, FilterList, InfosProd } from './ProdutosStyles';
+import { BtnFilter, BtnFilterTam, FilterList, InfosProd, ItemFilter } from './ProdutosStyles';
 import { getProdutoById } from '../../api/GetMethods';
 import NotFound from '../../pages/NotFound';
 import Loading from '../../services/Loading';
@@ -34,12 +34,13 @@ export default function FiltrosProduto() {
                             {openTamanho && corSelecionada === indexCor && (
                                 <FilterList>
                                     {corItem.tamanhos.map((tamanho, indexTam) => (
-                                        <li key={indexTam}>
-                                            <BtnFilter onClick={() => handleTamanhos(tamanhoSelecionado, setTamanhoSelecionado, indexTam, openQuantidade, setOpenQuantidade)}>{tamanho.tamanho}</BtnFilter>
-                                            {openQuantidade && tamanhoSelecionado === indexTam && (
-                                                <p>Quantidade Restante: {tamanho.quantidade}</p>
+                                        <ItemFilter key={indexTam}>
+                                            {tamanho.quantidade > 0 ? (
+                                                <BtnFilterTam title={`Quantidade Restante: ${tamanho.quantidade}`} onClick={() => handleTamanhos(tamanhoSelecionado, setTamanhoSelecionado, indexTam, openQuantidade, setOpenQuantidade)}>{tamanho.tamanho}</BtnFilterTam>
+                                            ) : (
+                                                <BtnFilterTam title={`Quantidade Restante: ${tamanho.quantidade}`} disabled onClick={() => handleTamanhos(tamanhoSelecionado, setTamanhoSelecionado, indexTam, openQuantidade, setOpenQuantidade)}>{tamanho.tamanho}</BtnFilterTam>
                                             )}
-                                        </li>
+                                        </ItemFilter>
                                     ))}
                                 </FilterList>
                             )}

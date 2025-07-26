@@ -23,8 +23,8 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
     padding: 1.5rem;
   }
 `,r=e.img`
-  width: 25rem;
-  height: 25rem;
+  width: 26.5rem;
+  height: 26.5rem;
   object-fit: cover;
 
   @media (max-width: 1024px) {
@@ -41,7 +41,7 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
     width: 10rem;
     height: 10rem;
   }
-`,d=e.div`
+`,a=e.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
@@ -54,7 +54,7 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
     @media (max-width: 480px) {
     padding: 1rem;
   }
-`,a=e.div`
+`,d=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +105,11 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
   list-style-type: none;
   flex-wrap: wrap;
   justify-content: center;
-`,n=e.button`
+`,n=e.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`,x=e.button`
   width: 2rem;
   height: 2rem;
   border: none;
@@ -126,7 +130,25 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
     width: 1.5rem;
     height: 1.5rem;
   }
-`,x=e.div`
+`,s=e.button`
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--trans-time);
+
+  &:focus {
+    border: 1px solid var(--color-txt);
+  }
+
+  @media (max-width: 768px) {
+    height: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 1.5rem;
+  }
+`,l=e.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -137,4 +159,4 @@ import{d as e}from"./GlobalStyles-DQ6u4sTK.js";const t=e.div`
     align-items: center;
     text-align: center;
   }
-`;export{n as B,o as F,a as I,r as P,d as a,m as b,x as c,t as d};
+`;export{x as B,o as F,d as I,r as P,n as a,s as b,a as c,m as d,l as e,t as f};

@@ -26,8 +26,8 @@ export const ProdutosC = styled.div`
   }
 `
 export const ProdutoImg = styled.img`
-  width: 25rem;
-  height: 25rem;
+  width: 26.5rem;
+  height: 26.5rem;
   object-fit: cover;
 
   @media (max-width: 1024px) {
@@ -114,6 +114,11 @@ export const FilterList = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
 `
+export const ItemFilter = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 export const BtnFilter = styled.button`
   width: 2rem;
   height: 2rem;
@@ -133,6 +138,25 @@ export const BtnFilter = styled.button`
 
   @media (max-width: 480px) {
     width: 1.5rem;
+    height: 1.5rem;
+  }
+`
+export const BtnFilterTam = styled.button`
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--trans-time);
+
+  &:focus {
+    border: 1px solid var(--color-txt);
+  }
+
+  @media (max-width: 768px) {
+    height: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
     height: 1.5rem;
   }
 `

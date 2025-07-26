@@ -246,23 +246,6 @@ export const handleCadastroProduto = async (nome, preco, categoria, lancamento, 
     }
     await postProduto(nome, preco, lancamento, categoria, foto, cor, setProduto, token);
 }
-export const filtroDeProdutos = (produtos, busca) => {
-    if (!Array.isArray(produtos)) return [];
-    if (!busca || typeof busca !== 'string') return produtos;
-
-    const includes = removerAcentos(busca.toLowerCase());
-
-    return produtos.filter(produto => {
-        const id = removerAcentos(String(produto.produto_id).toLowerCase());
-        const nome = removerAcentos(produto.produto_nome.toLowerCase());
-        const categoria = removerAcentos(produto.categoria_nome.toLowerCase());
-
-        return id.includes(includes) || nome.includes(includes) || categoria.includes(includes);
-    });
-}
-const removerAcentos = (txt) => {
-    return txt.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-}
 export const functionPaginacao = (paginaAtual, produtosFiltrados) => {
     const produtosPorPagina = 4;
 

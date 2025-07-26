@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { getAllProdutos } from '../../api/GetMethods';
 import { precoFormat } from '../home/HomeServices';
 import { ListaWrapper, CardProduto, ImagemProduto, NomeProduto, Categoria, Preco, CoresWrapper, CorItem, CirculoCor, ListaTamanhos, NewPrice } from '../../styles/GlobalStyles';
-import { filtroDeProdutos, functionPaginacao } from './AdminServices';
+import { functionPaginacao } from './AdminServices';
 import Paginacao from '../../services/Paginacao';
+import { filtroDeProdutos } from '../produtos/ProdutosServices';
 
 export default function ListaProdutos({ busca }) {
     const [produtos, setProdutos] = useState([]);

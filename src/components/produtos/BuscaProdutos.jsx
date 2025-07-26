@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { resultadosBusca, useQuery } from './ProdutosServices'
+import { filtroDeProdutos, useQuery } from './ProdutosServices'
 import { Container } from '../../styles/GlobalStyles'
 import ListaProdutos from './ListaProdutos'
 import BtnVoltar from '../../services/BtnVoltar'
@@ -18,7 +18,7 @@ export default function BuscaProdutos() {
   if (loading) return <Loading />
 
   const termoBusca = query.get('query')?.toLowerCase() || ''
-  const results = resultadosBusca(termoBusca, produtos);
+  const results = filtroDeProdutos(produtos, termoBusca);
 
   return (
     <Container>
